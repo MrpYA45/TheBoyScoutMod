@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+    {
+        "item": "tbsm:cocoa_cream"
+    },
+    {
+        "item": "tbsm:bread_slice"
+    },
+	{
+        "item": "tbsm:bread_slice"
+    },
+	{
+        "item": "tbsm:bread_slice"
+    },
+	{
+        "item": "tbsm:bread_slice"
+    },
+	{
+        "item": "tbsm:bread_slice"
+    }
+    ],
+    "result": {
+        "item": "tbsm:chocolate_sandwich",
+		"count": 5
+    }
+}

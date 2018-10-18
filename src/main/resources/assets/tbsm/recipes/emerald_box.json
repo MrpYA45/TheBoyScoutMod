@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern":
+	[
+		"EWE",
+		"WBW",
+		"EWE"
+    ],
+	"key":
+	{
+		"E":
+		{
+            "type": "forge:ore_dict",
+            "ore": "gemEmerald"
+		},
+		"W":
+		{
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+		},
+		"B":
+		{
+            "item": "tbsm:diamond_box_block"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:emerald_box_block"
+    }
+}

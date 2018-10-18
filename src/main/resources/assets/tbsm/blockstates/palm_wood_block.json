@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y": { "model": "tbsm:palm_wood_block" },
+        "axis=z": { "model": "tbsm:palm_wood_block", "x": 90 },
+        "axis=x": { "model": "tbsm:palm_wood_block", "x": 90, "y": 90 },
+        "axis=none": { "model": "tbsm:palm_wood_block" }
+    }
+}

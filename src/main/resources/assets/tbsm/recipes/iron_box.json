@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern":
+	[
+		"IWI",
+		"WBW",
+		"IWI"
+    ],
+	"key":
+	{
+		"I":
+		{
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+		},
+		"W":
+		{
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+		},
+		"B":
+		{
+            "item": "tbsm:wooden_box_block"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:iron_box_block"
+    }
+}

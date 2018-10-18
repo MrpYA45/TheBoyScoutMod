@@ -1,0 +1,6 @@
+{
+   "parent": "block/leaves",
+   "textures": {
+       "all": "tbsm:blocks/hazel_leaves_block"
+   }
+}

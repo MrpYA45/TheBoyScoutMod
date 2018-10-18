@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "tbsm:paper_bin_block" },
+        "facing=south": { "model": "tbsm:paper_bin_block", "y": 180 },
+        "facing=west":  { "model": "tbsm:paper_bin_block", "y": 270 },
+        "facing=east":  { "model": "tbsm:paper_bin_block", "y": 90 }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tbsm:knife"
+    ]
+  },
+  "criteria": {
+    "has_ingotIron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+             "type": "forge:ore_dict",
+             "ore": "ingotIron"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tbsm:knife"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ingotIron",
+      "has_the_recipe"
+    ]
+  ]
+}

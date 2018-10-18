@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+    {
+        "item": "minecraft:bread"
+    },
+    {
+        "item": "tbsm:knife"
+    }
+    ],
+    "result": {
+        "item": "tbsm:bread_slice",
+		"count": 3
+    }
+}

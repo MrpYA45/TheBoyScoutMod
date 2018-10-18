@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "tbsm:diamond_box_block" }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "tbsm:scout_shovel"
+        },
+        "title": {
+            "translate": "tbsm.advancements.story.scout_tools.title"
+        },
+        "description": {
+            "translate": "tbsm.advancements.story.scout_tools.description"
+        }
+    },
+    "parent": "tbsm:story/first_look",
+    "criteria": {
+        "scout_shovel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "tbsm:scout_shovel"
+                    }
+                ]
+            }
+        }
+    }
+}

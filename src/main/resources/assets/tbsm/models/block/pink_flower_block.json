@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "tbsm:blocks/pink_flower_block",
+        "particles": "tbsm:blocks/pink_flower_block"
+   }
+}

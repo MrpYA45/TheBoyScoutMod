@@ -1,0 +1,6 @@
+{
+   "parent": "block/leaves",
+   "textures": {
+       "all": "tbsm:blocks/palm_leaves_block"
+   }
+}

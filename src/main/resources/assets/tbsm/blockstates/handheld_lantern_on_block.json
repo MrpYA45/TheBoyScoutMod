@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "tbsm:handheld_lantern_on_block" },
+        "facing=south": { "model": "tbsm:handheld_lantern_on_block", "y": 180 },
+        "facing=west":  { "model": "tbsm:handheld_lantern_on_block", "y": 270 },
+        "facing=east":  { "model": "tbsm:handheld_lantern_on_block", "y": 90 }
+    }
+}

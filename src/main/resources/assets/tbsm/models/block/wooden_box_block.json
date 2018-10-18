@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "tbsm:blocks/wooden_box_block"
+   }
+}
