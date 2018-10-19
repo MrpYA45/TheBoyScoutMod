@@ -1,11 +1,23 @@
-/*
-/*/
-!/src/
-!.gitignore
-!gradlew*
-!/gradle/
-!/LICENSE.txt
-!/README.md
-!/COPYING.lesser
-!build.gradle
-!.travis.yml
+## Based on GitHub's Eclipse .gitignore
+
+run/
+.gradle/
+build/
+gradle-app.setting
+
+## Eclipse
+
+eclipse/
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
