@@ -78,7 +78,7 @@ public class PaperBinContainer  extends Container {
 	
 	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
-		return te.canInteractWith(playerIn);
+		return true;
 	}
 
 }

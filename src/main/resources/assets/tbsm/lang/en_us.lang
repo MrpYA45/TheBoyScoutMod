@@ -83,6 +83,7 @@ tile.iron_box_container.name=Iron Box
 tile.gold_box_container.name=Gold Box
 tile.diamond_box_container.name=Diamond Box
 tile.emerald_box_container.name=Emerald Box
+tile.paper_bin_container.name=Paper Bin
 
 //Advancements
 tbsm.advancements.story.first_look.title=TheBoyScoutMod
