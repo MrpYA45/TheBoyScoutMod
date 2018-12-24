@@ -23,6 +23,7 @@ import com.MrpYA45.TheBoyScoutMod.blocks.containers.paper_bin.PaperBinBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box.WoodenBoxBlock;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 

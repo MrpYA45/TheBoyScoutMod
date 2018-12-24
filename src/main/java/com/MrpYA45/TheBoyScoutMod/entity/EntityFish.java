@@ -1,5 +1,7 @@
 package com.MrpYA45.TheBoyScoutMod.entity;
 
+import javax.annotation.Nullable;
+
 import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 import com.google.common.base.Predicate;
 
@@ -19,24 +21,23 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 
-public class EntityFish extends EntityAnimal {
+public class EntityFish extends EntitySquid {
 
 	public EntityFish(World worldIn) {
 		super(worldIn);
 		this.setSize(0.2F, 0.2F);
-	}
-	
-	@Override
-	public EntityFish createChild(EntityAgeable ageable) {
-		return new EntityFish(world);
 	}
 	
 	@Override
@@ -50,43 +51,10 @@ public class EntityFish extends EntityAnimal {
 		return 0.15F;
 	}
 	
-    @Override
-    protected void initEntityAI() {
-        this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.3F));
-        this.tasks.addTask(3, new EntityAIOcelotAttack(this));
-        this.tasks.addTask(4, new EntityAIMate(this, 0.8D));
-        this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 0.8D, 1.0000001E-5F));
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
-    }
-    
-    public void updateAITasks()
+    @Nullable
+    protected ResourceLocation getLootTable()
     {
-        if (this.getMoveHelper().isUpdating())
-        {
-            double d0 = this.getMoveHelper().getSpeed();
-
-            if (d0 == 0.6D)
-            {
-                this.setSneaking(true);
-                this.setSprinting(false);
-            }
-            else if (d0 == 1.33D)
-            {
-                this.setSneaking(false);
-                this.setSprinting(true);
-            }
-            else
-            {
-                this.setSneaking(false);
-                this.setSprinting(false);
-            }
-        }
-        else
-        {
-            this.setSneaking(false);
-            this.setSprinting(false);
-        }
+        return null;
     }
     
     protected void applyEntityAttributes()
@@ -94,12 +62,6 @@ public class EntityFish extends EntityAnimal {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
-    }
-	
-    @Override
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return stack.getItem() == Items.FISH;
     }
     
 	@Override

@@ -15,6 +15,12 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("plankWood", ModBlocks.BAOBAB_PLANKS_BLOCK);
 		OreDictionary.registerOre("treeLeaves", ModBlocks.HAZEL_LEAVES_BLOCK);
 		OreDictionary.registerOre("treeLeaves", ModBlocks.PALM_LEAVES_BLOCK);
+		OreDictionary.registerOre("stone", ModBlocks.CLEAR_STONE_BLOCK);
+		OreDictionary.registerOre("stone", ModBlocks.DARK_STONE_BLOCK);
+		OreDictionary.registerOre("cobblestone", ModBlocks.CLEAR_COBBLESTONE_BLOCK);
+		OreDictionary.registerOre("cobblestone", ModBlocks.DARK_COBBLESTONE_BLOCK);
+		OreDictionary.registerOre("stonebrick", ModBlocks.CLEAR_STONE_BRICK_BLOCK);
+		OreDictionary.registerOre("stonebrick", ModBlocks.DARK_STONE_BRICK_BLOCK);
 	}
 
 }
