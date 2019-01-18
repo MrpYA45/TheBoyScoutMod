@@ -82,7 +82,9 @@ public class RopeBlock extends Block implements IHasModel {
     				System.out.println(pos.getX() + "," + pos.down(y).getY() + "," +  pos.getZ());
     			} while(worldIn.getBlockState(pos.down(y)).getBlock().equals(ModBlocks.ROPE_BLOCK));
     			if(isReplaceable(worldIn, pos.down(y)) && pos.down(y).getY()>=0 && !worldIn.getBlockState(pos.down(y)).getBlock().equals(Blocks.WATER) && !worldIn.getBlockState(pos.down(y)).getBlock().equals(Blocks.LAVA)) {
-    	    		playerIn.inventory.getCurrentItem().shrink(1);
+    	    		if(!playerIn.capabilities.isCreativeMode) {
+    	    			playerIn.inventory.getCurrentItem().shrink(1);
+    	    		}
     	    		worldIn.destroyBlock(pos.down(y), true);
     	    		worldIn.setBlockState(pos.down(y), this.getDefaultState());
     	    		System.out.println("Colocado");
@@ -105,9 +107,9 @@ public class RopeBlock extends Block implements IHasModel {
     {
     	if(entityIn instanceof EntityPlayer) {
     		if (entityIn.motionY >= 0.1) {
-    			entityIn.setPosition(entityIn.posX, entityIn.posY + 0.2F, entityIn.posZ);
-    			//entityIn.move(MoverType.SELF, 0, 0.2F, 0);
-    			//entityIn.setVelocity(0, 1.05F, 0);
+    			if(worldIn.getBlockState(pos.add(0, 2, 0)).getBlock().equals(ModBlocks.ROPE_BLOCK)) {
+    				entityIn.setPosition(entityIn.posX, entityIn.posY + 0.2F, entityIn.posZ);
+    			}
     		}
     	}
     }
