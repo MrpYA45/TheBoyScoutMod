@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=north": { "model": "tbsm:rope_block" },
+        "facing=south": { "model": "tbsm:rope_block", "y": 180 },
+        "facing=west":  { "model": "tbsm:rope_block", "y": 270 },
+        "facing=up":  { "model": "tbsm:rope_block"},
+		"normal":  { "model": "tbsm:rope_block"},
+        "facing=east":  { "model": "tbsm:rope_block", "y": 90 }
+    }
+}

@@ -28,6 +28,7 @@ item.cheese.name=Queso
 item.hot_milk.name=Leche Caliente
 item.chocolate_bar.name=Barrita de Chocolate
 item.hot_chocolate.name=Chocolate Caliente
+item.strawberry.name=Fresa
 
 //Blocks
 tile.hazel_wood_block.name=Tronco de Avellano
@@ -70,11 +71,19 @@ tile.paper_bin_block.name=Papelera
 tile.handheld_lantern_block.name=Linterna de Mano
 tile.handheld_lantern_on_block.name=Linterna de Mano
 tile.light_bar_block.name=Barra Luminosa
+tile.rope_block.name=Soga
 
 //Entities
 
 entity.squirrel.name=Ardilla
 entity.penguin.name=Pinguino
+entity.fish.name=Pez
+entity.golem.name=Golem de Madera
+entity.golem_stone.name=Golem de Piedra
+entity.golem_iron.name=Golem de Hierro
+entity.golem_gold.name=Golem de Oro
+entity.golem_diamond.name=Golem de Diamante
+entity.golem_emerald.name=Golem de Esmeralda
 
 //TileEntity
 
@@ -83,6 +92,7 @@ tile.iron_box_container.name=Caja de Hierro
 tile.gold_box_container.name=Caja de Oro
 tile.diamond_box_container.name=Caja de Diamante
 tile.emerald_box_container.name=Caja de Esmeralda
+tile.paper_bin_container.name=Papelera
 
 //Advancements
 tbsm.advancements.story.first_look.title=TheBoyScoutMod
@@ -99,6 +109,8 @@ tbsm.advancements.story.storage_plus_plus.title=Storage ++
 tbsm.advancements.story.storage_plus_plus.description=Create a golden box
 tbsm.advancements.story.storage_plus_plus_plus.title=Storage +++
 tbsm.advancements.story.storage_plus_plus_plus.description=Create an emerald box
+tbsm.advancements.story.lets_delete_this.title=Lets Delete This
+tbsm.advancements.story.lets_delete_this.description=Create a paper bin
 
 //Creative Tab
 itemGroup.tab_theboyscoutmod=TheBoyScoutMod

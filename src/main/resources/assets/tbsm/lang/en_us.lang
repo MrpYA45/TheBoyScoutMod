@@ -28,6 +28,7 @@ item.cheese.name=Cheese
 item.hot_milk.name=Hot Milk
 item.chocolate_bar.name=Chocolate Bar
 item.hot_chocolate.name=Hot Chocolate
+item.strawberry.name=Strawberry
 
 //Blocks
 tile.hazel_wood_block.name=Hazel Wood
@@ -70,11 +71,19 @@ tile.paper_bin_block.name=Paper Bin
 tile.handheld_lantern_block.name=Hand-held Lantern
 tile.handheld_lantern_on_block.name=Hand-held Lantern
 tile.light_bar_block.name=Light Bar
+tile.rope_block.name=Rope
 
 //Entities
 
 entity.squirrel.name=Squirrel
 entity.penguin.name=Penguin
+entity.fish.name=Fish
+entity.golem.name=Wood Golem
+entity.golem_stone.name=Stone Golem
+entity.golem_iron.name=Iron Golem
+entity.golem_gold.name=Gold Golem
+entity.golem_diamond.name=Diamond Golem
+entity.golem_emerald.name=Emerald Golem
 
 //TileEntity
 

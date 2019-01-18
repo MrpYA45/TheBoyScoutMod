@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 import com.MrpYA45.TheBoyScoutMod.items.BluePowderItem;
 import com.MrpYA45.TheBoyScoutMod.items.BlueberriesItem;
+import com.MrpYA45.TheBoyScoutMod.items.BlueberriesSeeds;
 import com.MrpYA45.TheBoyScoutMod.items.DryLeafItem;
 import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFood;
 import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFoodDrink;
+import com.MrpYA45.TheBoyScoutMod.items.StrawberryItem;
 import com.MrpYA45.TheBoyScoutMod.tools.CustomBow;
 import com.MrpYA45.TheBoyScoutMod.tools.ToolShovel;
 import com.MrpYA45.TheBoyScoutMod.items.ItemBase;
@@ -39,7 +41,7 @@ public class ModItems {
 	public static final Item DRY_LEAF = new DryLeafItem("dry_leaf");
 	public static final Item BACKPACK = new ItemBase("backpack");
 	public static final Item BLUE_POWDER = new BluePowderItem("blue_powder");
-	public static final Item BLUEBERRIES_SEEDS = new ItemBase("blueberries_seeds");
+	public static final Item BLUEBERRIES_SEEDS = new BlueberriesSeeds("blueberries_seeds");
 	public static final Item WOOD_GOLEM_STATUETTE = new ItemBase("wood_golem_statuette");
 	public static final Item STONE_GOLEM_STATUETTE = new ItemBase("stone_golem_statuette");
 	public static final Item IRON_GOLEM_STATUETTE = new ItemBase("iron_golem_statuette");
@@ -57,4 +59,5 @@ public class ModItems {
 	public static final Item HOT_MILK = new ItemCustomFoodDrink("hot_milk", 4, 0.3F,false);
 	public static final Item CHOCOLATE_BAR = new ItemCustomFood("chocolate_bar", 6, 0.3F, false);
 	public static final Item HOT_CHOCOLATE = new ItemCustomFoodDrink("hot_chocolate", 7, 0.3F, false);
+	public static final Item STRAWBERRY = new StrawberryItem("strawberry", 0, 0, false);
 }

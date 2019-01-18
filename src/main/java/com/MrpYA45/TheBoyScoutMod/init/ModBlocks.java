@@ -15,6 +15,8 @@ import com.MrpYA45.TheBoyScoutMod.blocks.GlowingClearGlassBlocks;
 import com.MrpYA45.TheBoyScoutMod.blocks.HandheldLanternBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.HandheldLanternOnBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.LightBarBlock;
+import com.MrpYA45.TheBoyScoutMod.blocks.RopeBlock;
+import com.MrpYA45.TheBoyScoutMod.blocks.StrawberryPlantBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.diamond_box.DiamondBoxBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.emerald_box.EmeraldBoxBlock;
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.gold_box.GoldBoxBlock;
@@ -70,4 +72,6 @@ public class ModBlocks {
 	public static final Block HANDHELD_LANTERN_BLOCK = new HandheldLanternBlock("handheld_lantern_block", Material.WOOD, 2.0F, 15.0F, SoundType.WOOD);
 	public static final Block HANDHELD_LANTERN_ON_BLOCK = new HandheldLanternOnBlock("handheld_lantern_on_block", Material.WOOD, 2.0F, 15.0F, SoundType.WOOD);
 	public static final Block LIGHT_BAR_BLOCK = new LightBarBlock("light_bar_block", Material.WOOD, 2.0F, 15.0F, SoundType.WOOD);
+	public static final Block STRAWBERRY_PLANT = new StrawberryPlantBlock("strawberry_plant");
+	public static final Block ROPE_BLOCK = new RopeBlock();
 }
