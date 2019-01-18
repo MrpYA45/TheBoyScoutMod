@@ -58,11 +58,11 @@ public class RegistryHandler {
 				((IHasModel)block).registerModels();
 			}
 		}
+		RenderHandler.registerEntityRenders();
 	}
 	
 	public static void preInitRegistries() {
 		ModEntities.registerEntities();
-		RenderHandler.registerEntityRenders();
 		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
 	}
 	
