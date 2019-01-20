@@ -57,8 +57,8 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 		
 		ArrayList<Class<?>> classesList = new ArrayList<Class<?>>(Arrays.asList(classes));
 		
-		int x = chunkX * 16 + random.nextInt(15);
-		int z = chunkZ * 16 + random.nextInt(15);
+		int x = chunkX * 16 + 4 + random.nextInt(9);
+		int z = chunkZ * 16 + 4 + random.nextInt(9);
 		int y = calculateGenerationHeight(world, x, z);
 		BlockPos pos = new BlockPos(x,y,z);
 		
