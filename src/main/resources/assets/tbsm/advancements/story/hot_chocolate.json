@@ -15,11 +15,9 @@
         "hot_chocolate": {
             "trigger": "consume_item",
             "conditions": {
-                "items": [
-					{
-						"item": "tbsm:hot_chocolate"
-					}
-				]
+                "item": {
+				    "item": "tbsm:hot_chocolate"
+				}
             }
         }
     }

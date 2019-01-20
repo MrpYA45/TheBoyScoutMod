@@ -39,7 +39,11 @@ public class WorldGenStructure extends WorldGenerator implements IStructure {
 		if(template != null && WorldGenCustomStructures.canSpawnHere(template, worldServer, pos)) {
 			IBlockState state = world.getBlockState(pos);
 			world.notifyBlockUpdate(pos, state, state, 3);
-			template.addBlocksToWorldChunk(world, pos, settings);
+			if(structureName == "palm_tree") {
+				template.addBlocksToWorldChunk(world, pos.up(), settings);
+			} else {
+				template.addBlocksToWorldChunk(world, pos, settings);
+			}
 		}
 	}
 	

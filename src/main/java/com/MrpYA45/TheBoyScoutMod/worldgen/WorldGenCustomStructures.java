@@ -18,6 +18,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.template.Template;
+import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenCustomStructures implements IWorldGenerator {
@@ -87,33 +88,31 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 	public static boolean canSpawnHere(Template template, World world, BlockPos posAboveGround) {
 		int zwidth = template.getSize().getZ();
 		int xwidth = template.getSize().getX();
-	
+		
 		// check all the corners to see which ones are replaceable
 		boolean corner1 = isCornerValid(world, posAboveGround);
 		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
 		boolean middle = isCornerValid(world, posAboveGround.add(xwidth/2, 0, zwidth/2));
-		boolean sameHeight = calculateSameHeight(world, posAboveGround, posAboveGround.add(xwidth, 0, zwidth), posAboveGround.add(xwidth/2, 0, zwidth/2));
 	
 		// if Y > 64 and all corners pass the test, it's okay to spawn the structure
-		return posAboveGround.getY() > 64 && corner1 && corner2 && middle && sameHeight;
+		return posAboveGround.getY() > 64 && corner1 && corner2 && middle;
 	}
 
 	public static boolean isCornerValid(World world, BlockPos pos) {
 		int variation = 3;
 		int highestBlock = calculateGenerationHeight(world, pos.getX(), pos.getZ());
 	
-		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation)
+		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation && noMoreFloatingStructures(world, pos))
 			return true;
 			
 		return false;
 	}
 	
-	public static boolean calculateSameHeight(World world, BlockPos corner1, BlockPos corner2, BlockPos middle) {
-		int pos1 = corner1.getY();
-		int pos2 = corner2.getY();
-		int pos3 = middle.getY();
-		if (pos1 == pos2 && pos2 == pos3)
+	public static boolean noMoreFloatingStructures(World world, BlockPos pos) {
+		Block block = world.getBlockState(pos).getBlock();
+		if(block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.SAND) {
 			return true;
+		}
 		return false;
 	}
 }

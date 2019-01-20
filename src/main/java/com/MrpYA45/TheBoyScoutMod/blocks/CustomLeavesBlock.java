@@ -64,7 +64,7 @@ public class CustomLeavesBlock extends BlockLeaves implements IHasModel{
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(this);
+        return null;
     }
 	
     @Override
