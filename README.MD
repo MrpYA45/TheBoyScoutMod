@@ -16,12 +16,16 @@ You can check the recipes through [JEI](https://minecraft.curseforge.com/project
 <center><i>A fort. Appears on forests.</center></i>
 <br><br>
 
+![](docs/pile_of_logs.png)
+<center><i>A pile of logs. Appears on forests and plains.</center></i>
+<br><br>
+
 ![](docs/tent.png)
 <center><i>A tent. Appears on forests and plains.</center></i>
 <br><br>
 
 ![](docs/vigilance_tower.png)
-<center><i>A campfire. Appears on forests.</center></i>
+<center><i>A vigilance tower. Appears on forests.</center></i>
 <br><br><br>
 
 ### Trees
