@@ -41,8 +41,8 @@ You can check the recipes through [JEI](https://minecraft.curseforge.com/project
 
 You can help me with this mod in many different ways:
 #### If you don't want to code:
-- [Submit an issue](https://github.com/MrpYA45/TheBoyScoutMod/issues/new?template=bug_report) if you found a bug
-- [Submit an issue](https://github.com/MrpYA45/TheBoyScoutMod/issues/new?template=feature_request) for a feature request
+- [Submit an issue](https://github.com/MrpYA45/TheBoyScoutMod/issues/new?assignees=MrpYA45&labels=bug&template=bug_report.md&title=%5BBUG%5D+) if you found a bug
+- [Submit an issue](https://github.com/MrpYA45/TheBoyScoutMod/issues/new?assignees=MrpYA45&labels=enhancement&template=feature_request.md&title=%5BRequest%5D) for a feature request
 - Fork this repository and edit the files [in this folder](/src/main/resources/assets/tbsm/lang). Then submit a pull request by going into your fork and clicking Pull Request.
 ![](docs/PR.png) This should be at the top of the files.
 You can also use [this little tool](https://github.com/rogama25/minecraft-translation-helper) to help you :P
