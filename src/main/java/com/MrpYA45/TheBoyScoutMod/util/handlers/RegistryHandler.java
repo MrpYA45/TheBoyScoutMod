@@ -7,11 +7,16 @@ import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 import com.MrpYA45.TheBoyScoutMod.util.IHasModel;
 import com.MrpYA45.TheBoyScoutMod.worldgen.CustomOreGen;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenCustomStructures;
+import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenTBSMFlowers;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -67,7 +72,11 @@ public class RegistryHandler {
 	}
 	
 	public static void initRegistries() {
-		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());		
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.BLUE_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.PINK_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.ORANGE_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.WEEDS_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
 	}
 
 	public static void postInitRegistries() {

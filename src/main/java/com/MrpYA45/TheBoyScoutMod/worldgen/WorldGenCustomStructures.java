@@ -110,7 +110,7 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 	
 	public static boolean noMoreFloatingStructures(World world, BlockPos pos) {
 		Block block = world.getBlockState(pos).getBlock();
-		if(block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.SAND) {
+		if(block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.SAND && world.getBlockState(pos.up()).getBlock().isAir(world.getBlockState(pos.up()), world, pos.up())) {
 			return true;
 		}
 		return false;
