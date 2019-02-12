@@ -2,14 +2,14 @@
 {
   "modid": "tbsm",
   "name": "TheBoyScoutMod",
-  "description": "TheBoyScoutMod adds: New blocks, woods, fuels, food, bigger container blocks (Boxes), structures, flowers, items, weapons, advancements, bushes, mobs… It’s a complete mod with things that will help you to survive in your world with little improvements and additions.",
-  "version": "1.0.0",
+  "description": "TheBoyScoutMod adds: New blocks, woods, fuels, food, bigger container blocks (Boxes), structures, flowers, items, weapons, advancements, bushes, mobs. It's a complete mod with things that will help you to survive in your world with little improvements and additions.",
+  "version": "1.0.2",
   "mcversion": "1.12.2",
-  "url": "",
-  "updateUrl": "",
+  "url": "minecraft.curseforge.com/projects/theboyscout-mod",
+  "updateUrl": "https://gist.githubusercontent.com/MrpYA45/d7d145e1573a17f04e4a75c600ffbc35/raw/update.json",
   "authorList": ["MrpYA45"],
   "credits": "",
-  "logoFile": "",
+  "logoFile": "assets/tbsm/textures/logo.png",
   "screenshots": [],
   "dependencies": []
 }

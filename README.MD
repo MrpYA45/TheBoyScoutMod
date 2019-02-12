@@ -30,11 +30,11 @@ You can check the recipes through [JEI](https://minecraft.curseforge.com/project
 
 ### Trees
 ![](docs/palm_tree.png)
-<center><i>A palm tree. Appears on forests and plains.</center></i>
+<center><i>A palm tree. Appears on beaches and deserts.</center></i>
 <br><br>
 
 ![](docs/hazel_tree.png)
-<center><i>A hazel tree. Appears on beaches and deserts.</center></i>
+<center><i>A hazel tree. Appears on forests and plains.</center></i>
 <br><br>
 
 ## Contributing
