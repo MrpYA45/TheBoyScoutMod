@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "clearGlass",
+    "pattern":
+	[
+		"RR",
+		"RR"
+    ],
+	"key":
+	{
+		"R":
+		{
+            "type": "forge:ore_dict",
+            "ore": "blockGlassRed"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:red_clear_glass_block",
+		"count": 4
+    }
+}

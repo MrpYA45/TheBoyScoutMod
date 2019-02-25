@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tbsm:green_glowing_clear_glass"
+    ]
+  },
+  "criteria": {
+    "has_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tbsm:green_glowing_clear_glass"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glass",
+      "has_the_recipe"
+    ]
+  ]
+}

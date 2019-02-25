@@ -2,6 +2,7 @@ package com.MrpYA45.TheBoyScoutMod.util.handlers;
 
 import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
 
+import net.minecraft.init.Blocks;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryHandler {
@@ -21,6 +22,7 @@ public class OreDictionaryHandler {
 		OreDictionary.registerOre("cobblestone", ModBlocks.DARK_COBBLESTONE_BLOCK);
 		OreDictionary.registerOre("stonebrick", ModBlocks.CLEAR_STONE_BRICK_BLOCK);
 		OreDictionary.registerOre("stonebrick", ModBlocks.DARK_STONE_BRICK_BLOCK);
+		OreDictionary.registerOre("blockWool", Blocks.WOOL);
 	}
 
 }

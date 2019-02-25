@@ -15,7 +15,7 @@ public class WorldGenTBSMFlowers implements IWorldGenerator {
 	
 	private int frecuency;
 	private Biome[] biomes;
-	private WorldGenFlower flower;
+	private WorldGenFlowers flower;
 	
 	public WorldGenTBSMFlowers(Block block, int frecuency, Biome... biomes) {
 		this(block, frecuency, 0, biomes);
@@ -24,7 +24,7 @@ public class WorldGenTBSMFlowers implements IWorldGenerator {
 	public WorldGenTBSMFlowers(Block block, int frecuency, int dimesion, Biome... biomes) {
 		
 		this.biomes = biomes;
-		flower = new WorldGenFlower(block);
+		flower = new WorldGenFlowers(block);
 		this.frecuency = frecuency;
 	}
 

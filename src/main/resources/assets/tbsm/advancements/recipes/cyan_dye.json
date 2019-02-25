@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tbsm:cyan_dye"
+    ]
+  },
+  "criteria": {
+    "has_blue_flower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tbsm:blue_flower_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tbsm:cyan_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blue_flower",
+      "has_the_recipe"
+    ]
+  ]
+}

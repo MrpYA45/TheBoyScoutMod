@@ -1,0 +1,29 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern":
+	[
+		"HHH",
+		"IEI",
+		"III"
+    ],
+	"key":
+	{
+		"H":
+		{
+            "item": "minecraft:heavy_weighted_pressure_plate"
+		},
+		"I":
+		{
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+		},
+		"E":
+		{
+            "item": "minecraft:ender_pearl"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:paper_bin_block"
+    }
+}

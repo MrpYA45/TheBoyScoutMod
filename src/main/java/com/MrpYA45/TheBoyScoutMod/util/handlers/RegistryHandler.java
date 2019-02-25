@@ -5,7 +5,7 @@ import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
 import com.MrpYA45.TheBoyScoutMod.init.ModEntities;
 import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 import com.MrpYA45.TheBoyScoutMod.util.IHasModel;
-import com.MrpYA45.TheBoyScoutMod.worldgen.CustomOreGen;
+import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenCustomOreGen;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenCustomStructures;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenTBSMFlowers;
 
@@ -84,7 +84,7 @@ public class RegistryHandler {
 	}
 	
 	public static void otherRegistries() {
-		GameRegistry.registerWorldGenerator(new CustomOreGen(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenCustomOreGen(), 0);
 	}
 
 }
