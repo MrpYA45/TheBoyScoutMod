@@ -13,10 +13,12 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -48,6 +50,8 @@ public class RegistryHandler {
 		Blocks.FIRE.setFireInfo(ModBlocks.BLUEBERRIES_BUSH_BLOCK , 30, 60);
 		Blocks.FIRE.setFireInfo(ModBlocks.FULL_BLUEBERRIES_BUSH_BLOCK , 30, 60);
 		TileEntityHandler.registerTileEntity();
+		MinecraftForge.addGrassSeed(new ItemStack(ModItems.BLUEBERRIES_SEEDS), 4);
+		MinecraftForge.addGrassSeed(new ItemStack(ModItems.STRAWBERRY), 1);
 	}
 
 	@SubscribeEvent
