@@ -78,10 +78,10 @@ public class RegistryHandler {
 	
 	public static void initRegistries() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.BLUE_FLOWER_BLOCK, TBSMConfig.flowers.blue_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.PINK_FLOWER_BLOCK, TBSMConfig.flowers.pink_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.ORANGE_FLOWER_BLOCK, TBSMConfig.flowers.orange_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.WEEDS_BLOCK, TBSMConfig.flowers.weeds_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.BLUE_FLOWER_BLOCK, TBSMConfig.Flowers.blue_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.PINK_FLOWER_BLOCK, TBSMConfig.Flowers.pink_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.ORANGE_FLOWER_BLOCK, TBSMConfig.Flowers.orange_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.WEEDS_BLOCK, TBSMConfig.Flowers.weeds_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
 	}
 
 	public static void postInitRegistries() {
