@@ -5,6 +5,7 @@ import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
 import com.MrpYA45.TheBoyScoutMod.init.ModEntities;
 import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 import com.MrpYA45.TheBoyScoutMod.util.IHasModel;
+import com.MrpYA45.TheBoyScoutMod.util.TBSMConfig;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenCustomOreGen;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenCustomStructures;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenTBSMFlowers;
@@ -77,10 +78,10 @@ public class RegistryHandler {
 	
 	public static void initRegistries() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.BLUE_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.PINK_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.ORANGE_FLOWER_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.WEEDS_BLOCK, 5, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.BLUE_FLOWER_BLOCK, TBSMConfig.flowers.blue_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.PINK_FLOWER_BLOCK, TBSMConfig.flowers.pink_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.ORANGE_FLOWER_BLOCK, TBSMConfig.flowers.orange_flower_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenTBSMFlowers(ModBlocks.WEEDS_BLOCK, TBSMConfig.flowers.weeds_frecuency, BiomeDictionary.getBiomes(Type.FOREST).toArray(new Biome[0])), 0);
 	}
 
 	public static void postInitRegistries() {

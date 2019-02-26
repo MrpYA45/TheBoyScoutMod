@@ -3,6 +3,7 @@ package com.MrpYA45.TheBoyScoutMod.worldgen;
 import java.util.Random;
 
 import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
+import com.MrpYA45.TheBoyScoutMod.util.TBSMConfig;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -41,7 +42,7 @@ public class WorldGenCustomOreGen implements IWorldGenerator {
 		switch(world.provider.getDimension())
 		{
 		case 0: //Overworld
-			this.runGenerator(blue_powder_gravel_overworld, world, random, chunkX, chunkZ, 50, 48, 96);
+			this.runGenerator(blue_powder_gravel_overworld, world, random, chunkX, chunkZ, TBSMConfig.blue_powder_frecuency, 48, 96);
 			break;
 		case -1: //Nether
 			break;

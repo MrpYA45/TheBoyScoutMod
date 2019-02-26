@@ -56,9 +56,9 @@ public class ModItems {
 	public static final Item CHOCOLATE_SANDWICH = new ItemCustomFood("chocolate_sandwich", 5, 0.3F,false);
 	public static final Item BLUEBERRIES = new ItemBlueberries("blueberries", 1, 0.2F, false);
 	public static final Item FRIED_EGG = new ItemCustomFood("fried_egg", 5, 0.3F, false);	
-	public static final Item CHEESE = new ItemCustomFood("cheese", 5, 0.3F,false);
-	public static final Item HOT_MILK = new ItemCustomFoodDrink("hot_milk", 4, 0.3F,false);
+	public static final Item CHEESE = new ItemCustomFood("cheese", 4, 0.3F,false);
+	public static final Item HOT_MILK = new ItemCustomFoodDrink("hot_milk", 3, 0.3F,false);
 	public static final Item CHOCOLATE_BAR = new ItemCustomFood("chocolate_bar", 6, 0.3F, false);
 	public static final Item HOT_CHOCOLATE = new ItemCustomFoodDrink("hot_chocolate", 7, 0.3F, false);
-	public static final Item STRAWBERRY = new ItemStrawberry("strawberry", 0, 0, false);
+	public static final Item STRAWBERRY = new ItemStrawberry("strawberry", 4, 0.3F, false);
 }

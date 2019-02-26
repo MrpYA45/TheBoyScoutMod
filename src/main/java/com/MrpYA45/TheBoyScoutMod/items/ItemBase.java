@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 public class ItemBase extends Item implements IHasModel {
 
-	private String ItemWIPLore;
+	private Boolean ItemWIPLore = false;
 	
 	public ItemBase(String name) {
 		setUnlocalizedName(name);
@@ -27,12 +27,16 @@ public class ItemBase extends Item implements IHasModel {
 	
 	public ItemBase(String name, Boolean WIP) {
 		this(name);
-		ItemWIPLore = "WIP";
+		ItemWIPLore = true;
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(TextFormatting.RED + ItemWIPLore);
+		if(ItemWIPLore) {
+			tooltip.add(TextFormatting.RED + "WIP");
+		} else {
+			super.addInformation(stack, worldIn, tooltip, flagIn);
+		}
 	}
 	
 	@Override
