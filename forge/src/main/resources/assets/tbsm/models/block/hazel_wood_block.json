@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "tbsm:block/hazel_wood_down_block",
+        "side": "tbsm:block/hazel_wood_block"
+    }
+}

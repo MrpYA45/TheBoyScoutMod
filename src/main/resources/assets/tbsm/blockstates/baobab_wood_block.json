@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "axis=y": { "model": "tbsm:baobab_wood_block" },
-        "axis=z": { "model": "tbsm:baobab_wood_block", "x": 90 },
-        "axis=x": { "model": "tbsm:baobab_wood_block", "x": 90, "y": 90 },
-        "axis=none": { "model": "tbsm:baobab_wood_block" }
-    }
-}

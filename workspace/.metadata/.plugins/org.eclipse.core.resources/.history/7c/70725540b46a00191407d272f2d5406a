@@ -1,0 +1,81 @@
+package com.MrpYA45.TheBoyScoutMod;
+
+import com.MrpYA45.TheBoyScoutMod.init.ModTabTBSM;
+
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+@Mod(Main.MOD_ID)
+public class Main {
+	
+	public static final String MOD_ID = "tbsm";
+	
+	public static final ItemGroup TBSM_TAB = new ModTabTBSM();
+	
+	public Main() {
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+		
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+	
+	public void setup(final FMLCommonSetupEvent event) {
+		
+	}
+	
+	public void clientSetup(final FMLClientSetupEvent event) {
+		
+	}
+	
+	public void enqueueIMC(final InterModEnqueueEvent event) {
+		
+	}
+	
+	public void processIMC(final InterModProcessEvent event) {
+		
+	}
+	
+	@SubscribeEvent
+	public void onServerStarting(FMLServerStartingEvent event) {
+		
+	}
+	
+//	
+//	@EventHandler
+//	public static void PreInit(FMLPreInitializationEvent event)
+//	{
+//		RegistryHandler.preInitRegistries();
+//		RegistryHandler.otherRegistries();
+//	}
+//	
+//	@EventHandler
+//	public static void init(FMLInitializationEvent event)
+//	{
+//		RegistryHandler.initRegistries();
+//		OreDictionaryHandler.registerOreDictionary();
+//		RecipeHandler.registerSmeltingRecipes();
+//	}
+//	
+//	@EventHandler
+//	public static void Postinit(FMLPostInitializationEvent event)
+//	{
+//		RegistryHandler.postInitRegistries();
+//	}
+//	
+//	public static CreativeTabs tabTheBoyScoutMod = new CreativeTabs("tab_theboyscoutmod") {
+//		
+//		@Override
+//		public ItemStack getTabIconItem() {
+//			return new ItemStack(ModItems.THE_DIARY_OF_THE_SCOUT);
+//		}
+//	};
+}

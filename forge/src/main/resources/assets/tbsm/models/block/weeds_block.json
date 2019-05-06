@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "tbsm:block/weeds_block",
+        "particles": "tbsm:block/weeds_block"
+   }
+}

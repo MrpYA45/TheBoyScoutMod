@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="OCEAN" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="true" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="ocean"/>
+			<item value="seagra"/>
+			<item value="collision"/>
+			<item value="isopaque"/>
+			<item value="isopa"/>
+			<item value="   private boolean canAttachTo(IBlockReader p_196471_1_, BlockPos p_196471_2_, EnumFacing p_196471_3_) {"/>
+			<item value="mater"/>
+			<item value="sugar"/>
+			<item value="Should"/>
+			<item value="should"/>
+			<item value="glass"/>
+			<item value="spawnEntityas"/>
+			<item value="spawnEnti"/>
+			<item value="   public IBlockState getStateForPlacement(BlockItemUseContext context) {"/>
+			<item value="Entity"/>
+		</list>
+		<list key="replacehistory">
+			<item value="\t"/>
+			<item value="stack"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="284" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="1043" key="DIALOG_X_ORIGIN"/>
+		<item value="110" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

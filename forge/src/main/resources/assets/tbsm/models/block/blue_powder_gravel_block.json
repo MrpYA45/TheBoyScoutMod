@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "tbsm:block/blue_powder_gravel_block"
+   }
+}

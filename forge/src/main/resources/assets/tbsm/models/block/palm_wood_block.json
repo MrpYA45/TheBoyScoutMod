@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "tbsm:block/palm_wood_down_block",
+        "side": "tbsm:block/palm_wood_block"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,lit=false": { "model": "tbsm:block/handheld_lantern_block" },
+        "facing=south,lit=false": { "model": "tbsm:block/handheld_lantern_block", "y": 180 },
+        "facing=west,lit=false":  { "model": "tbsm:block/handheld_lantern_block", "y": 270 },
+        "facing=east,lit=false":  { "model": "tbsm:block/handheld_lantern_block", "y": 90 },
+        "facing=north,lit=true": { "model": "tbsm:block/handheld_lantern_on_block" },
+        "facing=south,lit=true": { "model": "tbsm:block/handheld_lantern_on_block", "y": 180 },
+        "facing=west,lit=true":  { "model": "tbsm:block/handheld_lantern_on_block", "y": 270 },
+        "facing=east,lit=true":  { "model": "tbsm:block/handheld_lantern_on_block", "y": 90 }
+    }
+}

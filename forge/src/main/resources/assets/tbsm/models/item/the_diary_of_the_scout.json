@@ -1,0 +1,6 @@
+{
+   "parent": "item/generated",
+   "textures": {
+       "layer0": "tbsm:item/the_diary_of_the_scout"
+   }
+}

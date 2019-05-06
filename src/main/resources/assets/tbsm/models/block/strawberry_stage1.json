@@ -1,6 +1,0 @@
-{
-    "parent": "block/crop",
-    "textures": {
-        "crop": "tbsm:blocks/strawberry_plant_stage1"
-    }
-}

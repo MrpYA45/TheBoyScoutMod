@@ -1,0 +1,58 @@
+package com.MrpYA45.TheBoyScoutMod.blocks;
+
+import java.util.Random;
+
+import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
+import com.MrpYA45.TheBoyScoutMod.init.ModItems;
+import com.MrpYA45.TheBoyScoutMod.util.IHasModel;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
+
+public class BlockBlueberriesBush extends Block {
+
+	public BlockBlueberriesBush(String name, Material material) {
+		super(Properties.create(Material.PLANTS));
+		setRegistryName(name);
+		setCreativeTab(Main.tabTheBoyScoutMod);
+		setHardness(0.2F);
+		setResistance(1);
+		setHarvestLevel("axe",0);
+		setTickRandomly(true);
+		setSoundType(SoundType.PLANT);
+	}
+	
+	@Override
+	public ToolType getHarvestTool(IBlockState state) {
+		return ToolType.AXE;
+	}
+	
+    @Override
+    protected ItemStack getSilkTouchDrop(IBlockState state)
+    {
+//        return new ItemStack(ModBlocks.BAOBAB_PLANKS_BLOCK);
+    }
+    @Override
+    public void randomTick(IBlockState state, World worldIn, BlockPos pos, Random random) {
+		int i = pos.getX();
+		int j = pos.getY();
+		int k = pos.getZ();
+		
+		worldIn.setBlockState(new BlockPos(i, j, k), ModBlocks.FULL_BLUEBERRIES_BUSH_BLOCK.getDefaultState(), 3);
+	}
+
+	@Override
+	public void registerModels() {
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");		
+	}
+
+}

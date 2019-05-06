@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "tbsm:block/light_bar_block", "y": 180 },
+        "facing=south": { "model": "tbsm:block/light_bar_block" },
+        "facing=west":  { "model": "tbsm:block/light_bar_block", "y": 90 },
+        "facing=east":  { "model": "tbsm:block/light_bar_block", "y": 270 }
+    }
+}

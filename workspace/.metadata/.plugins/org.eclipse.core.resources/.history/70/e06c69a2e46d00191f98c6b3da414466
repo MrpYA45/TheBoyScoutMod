@@ -1,0 +1,10 @@
+package com.MrpYA45.TheBoyScoutMod.blocks;
+
+public class BlockGlowingClearGlass extends BlockClearGlass {
+
+	public BlockGlowingClearGlass(String name) {
+		super(name);
+//		setLightLevel(7.0F);
+	}
+
+}

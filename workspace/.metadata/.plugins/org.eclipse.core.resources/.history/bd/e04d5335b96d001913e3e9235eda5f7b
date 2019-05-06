@@ -1,0 +1,40 @@
+package com.MrpYA45.TheBoyScoutMod.blocks;
+
+import java.util.Random;
+
+import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
+
+public class BlockBlueberriesBush extends Block {
+
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_2;
+
+	public BlockBlueberriesBush(String name) {
+		super(Properties.create(Material.PLANTS).hardnessAndResistance(0.2F).sound(SoundType.PLANT).needsRandomTick());
+		setRegistryName(name);
+	}
+
+	@Override
+	public ToolType getHarvestTool(IBlockState state) {
+		return ToolType.AXE;
+	}
+
+	@Override
+	public void randomTick(IBlockState state, World worldIn, BlockPos pos, Random random) {
+		int i = pos.getX();
+		int j = pos.getY();
+		int k = pos.getZ();
+
+		worldIn.setBlockState(new BlockPos(i, j, k), ModBlocks.FULL_BLUEBERRIES_BUSH_BLOCK.getDefaultState(), 3);
+	}
+}

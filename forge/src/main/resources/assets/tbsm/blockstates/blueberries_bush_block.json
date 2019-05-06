@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "age=0": { "model": "tbsm:block/blueberries_bush_block" },
+        "age=1": { "model": "tbsm:block/full_blueberries_bush_block" }
+    }
+}

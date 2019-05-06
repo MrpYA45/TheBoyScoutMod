@@ -1,0 +1,12 @@
+package com.MrpYA45.TheBoyScoutMod.tools;
+
+import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
+
+public class ItemScoutSpadeTool extends Item {
+
+	public ItemScoutSpadeTool(String name) {
+		super(new Properties().addToolType(ToolType.SHOVEL, 2).defaultMaxDamage(320));
+		setRegistryName(name);
+	}
+}
