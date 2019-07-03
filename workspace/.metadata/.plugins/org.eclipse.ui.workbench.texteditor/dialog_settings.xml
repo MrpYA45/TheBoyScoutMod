@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="OCEAN" key="selection"/>
+		<item value="WOOD" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="true" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="wood"/>
+			<item value="IgetSlots"/>
+			<item value="Iget"/>
+			<item value="config"/>
 			<item value="ocean"/>
 			<item value="seagra"/>
 			<item value="collision"/>
@@ -19,10 +23,6 @@
 			<item value="Should"/>
 			<item value="should"/>
 			<item value="glass"/>
-			<item value="spawnEntityas"/>
-			<item value="spawnEnti"/>
-			<item value="   public IBlockState getStateForPlacement(BlockItemUseContext context) {"/>
-			<item value="Entity"/>
 		</list>
 		<list key="replacehistory">
 			<item value="\t"/>

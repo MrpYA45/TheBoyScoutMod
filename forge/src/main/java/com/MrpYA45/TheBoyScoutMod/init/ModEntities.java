@@ -1,20 +1,26 @@
 package com.MrpYA45.TheBoyScoutMod.init;
 
 import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.entity.EntityFish;
+import com.MrpYA45.TheBoyScoutMod.entity.EntityGolem;
+import com.MrpYA45.TheBoyScoutMod.entity.EntityPenguin;
 import com.MrpYA45.TheBoyScoutMod.entity.EntitySquirrel;
 
 import net.minecraft.entity.EntityType;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.ObjectHolder;
 
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
 public class ModEntities {
 
 	public static final EntityType<EntitySquirrel> SQUIRREL = EntityType.register(Main.MOD_ID + ":squirrel",
 			EntityType.Builder.create(EntitySquirrel.class, EntitySquirrel::new).tracker(256, 1, true));
+	public static final EntityType<EntityPenguin> PENGUIN = EntityType.register(Main.MOD_ID + ":penguin",
+			EntityType.Builder.create(EntityPenguin.class, EntityPenguin::new).tracker(256, 1, true));
+	public static final EntityType<EntityFish> FISH = EntityType.register(Main.MOD_ID + ":fish",
+			EntityType.Builder.create(EntityFish.class, EntityFish::new).tracker(256, 1, true));
+	public static final EntityType<EntityGolem> GOLEM = EntityType.register(Main.MOD_ID + ":golem",
+			EntityType.Builder.create(EntityGolem.class, EntityGolem::new).tracker(256, 1, true));
 
 //	public static void registerEntities() {
 //		registerEntity("squirrel", EntitySquirrel.class, Reference.ENTITY_SQUIRREL, 80, (132 << 16) + (68 << 8) + 7, (64 << 16) + (33 << 8) + 3);
@@ -29,25 +35,6 @@ public class ModEntities {
 //		registerEntity("golem_gold", EntityGoldGolem.class, Reference.ENTITY_GOLD_GOLEM, 80, (43 << 16) + (29 << 8) + 6, (208 << 16) + (159 << 8) + 46);
 //		registerEntity("golem_diamond", EntityDiamondGolem.class, Reference.ENTITY_DIAMOND_GOLEM, 80, (43 << 16) + (29 << 8) + 6, (136 << 16) + (193 << 8) + 188);
 //		registerEntity("golem_emerald", EntityEmeraldGolem.class, Reference.ENTITY_EMERALD_GOLEM, 80, (43 << 16) + (29 << 8) + 6, (10 << 16) + (149 << 8) + 98);
-//	}
-
-//	@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
-//	public static class Register {
-//
-//		@SubscribeEvent
-//		public static void registerEntities(IForgeRegistry<EntityType<?>> event) {
-//			event.register(SQUIRREL);
-//		}
-//	}
-
-//	private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
-//		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + name), entity, name, id, Main.instance, range, 3, true, color1, color2);
-//	}
-
-	// TODO 1.13
-//	private static <T extends Entity> void registerEntityWithEgg(String name, Class<? extends T> entityClassIn, Function<? super World, ? extends T> factoryIn, int id, int range, int color1, int color2) {
-//		EntityType.Builder<T> builder = EntityType.Builder.create(entityClassIn, factoryIn);
-//		EntityType.register(name, builder);
 //	}
 
 }

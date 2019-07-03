@@ -1,58 +1,82 @@
 package com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box;
 
+import com.MrpYA45.TheBoyScoutMod.init.ModTileEntities;
+
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityWoodenBox extends TileEntity {
-	
+
 	public static final int SIZE = 18;
-	
-	private ItemStackHandler itemStackHandler = new ItemStackHandler(SIZE) {
+
+	private ItemStackHandler inventory = new ItemStackHandler(SIZE)/* {
 		@Override
 		protected void onContentsChanged(int slot) {
 			TileEntityWoodenBox.this.markDirty();
 		}
-		
-	};
-	
-	@Override
-	public void readFromNBT(NBTTagCompound compound) {
-		super.readFromNBT(compound);
-		if (compound.hasKey("items")) {
-			itemStackHandler.deserializeNBT((NBTTagCompound) compound.getTag("items"));
-		}
+
+	}*/;
+
+	public TileEntityWoodenBox() {
+		super(ModTileEntities.WOODEN_BOX);
 	}
-	
-	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
-		compound.setTag("items",itemStackHandler.serializeNBT());
-		return compound;
+
+	public void save() {
+		IBlockState state = this.world.getBlockState(this.pos);
+		this.world.markBlockRangeForRenderUpdate(this.pos, this.pos);
+		this.world.notifyBlockUpdate(pos, state, state, 3);
+		this.markDirty();
 	}
-	
-	public boolean canInteractWith(EntityPlayer playerIn) {
-		return !isInvalid() && playerIn.getDistanceSq(pos.add(0.5D, 0.5D, 0.5D)) <64D;
-	}
-	
+
 	@Override
-	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-		if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-			return true;
-		}
-		return super.hasCapability(capability, facing);
+	public void read(NBTTagCompound compound) {
+		this.inventory.deserializeNBT(compound.getCompound("inventory"));
+		super.read(compound);
 	}
-	
+
 	@Override
-	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-		if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-			return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(itemStackHandler);
-		}
-		return super.getCapability(capability, facing);
+	public NBTTagCompound write(NBTTagCompound compound) {
+		compound.setTag("inventory", inventory.serializeNBT());
+		return super.write(compound);
+	}
+
+	public ItemStackHandler getInventory() {
+		return this.inventory;
+	}
+
+	public boolean interact(EntityPlayer player) {
+		return this.world.getTileEntity(this.pos) != this ? false : player.getDistanceSq(player) <= 64.0D;
+	}
+
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return this.write(new NBTTagCompound());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		this.read(pkt.getNbtCompound());
+	}
+
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		return new SPacketUpdateTileEntity(pos, 0, this.getUpdateTag());
+	}
+
+	@Override
+	public <T> LazyOptional<T> getCapability(Capability<T> cap, EnumFacing side) {
+		if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+			return LazyOptional.of(() -> this.inventory).cast();
+		return super.getCapability(cap, side);
 	}
 
 }

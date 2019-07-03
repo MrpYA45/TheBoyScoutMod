@@ -27,7 +27,7 @@ public class ContainerEmeraldBox extends Container {
 			for (int col = 0; col < 9; col++) {
 				int x = 8 + col * 18;
 				int y = row * 18 + 210;
-				this.addSlotToContainer(new Slot(playerInventory, col + row * 9 + 9, x, y));
+				this.addSlot(new Slot(playerInventory, col + row * 9 + 9, x, y));
 			}
 		}
 		
@@ -35,7 +35,7 @@ public class ContainerEmeraldBox extends Container {
 		for (int row = 0; row < 9; row++) {
 			int x = 8 + row * 18;
 			int y = 268;
-			this.addSlotToContainer(new Slot(playerInventory, row, x, y));
+			this.addSlot(new Slot(playerInventory, row, x, y));
 		}
 	}
 	
@@ -53,7 +53,7 @@ public class ContainerEmeraldBox extends Container {
 				y += 18;
 				row	= 0;
 			}	
-			addSlotToContainer(new SlotItemHandler(itemHandler, slotIndex, x, y));
+			addSlot(new SlotItemHandler(itemHandler, slotIndex, x, y));
 			slotIndex++;
 			row++;
 			x += 18;

@@ -2,10 +2,10 @@ package com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box;
 
 import java.awt.Color;
 
-import com.MrpYA45.TheBoyScoutMod.util.Reference;
+import com.MrpYA45.TheBoyScoutMod.Main;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.inventory.Container;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
 
@@ -13,18 +13,19 @@ public class GuiWoodenBox extends GuiContainer {
 	public static final int WIDTH = 176;
 	public static final int HEIGHT = 148;
 	
-	private static final ResourceLocation background = new ResourceLocation(Reference.MOD_ID + ":textures/gui/wooden_container.png");
+	private static final ResourceLocation background = new ResourceLocation(Main.MOD_ID + ":textures/gui/wooden_container.png");
 	
-	public GuiWoodenBox(TileEntityWoodenBox tileEntity, ContainerWoodenBox container) {
-		super(container);
+	public GuiWoodenBox(InventoryPlayer player, TileEntityWoodenBox inventory) {
+		super(new ContainerWoodenBox(player, inventory));
 		
 		xSize = WIDTH;
 		ySize = HEIGHT;
 	}
-	
-    public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+
+	@Override
+	public void render(int mouseX, int mouseY, float partialTicks) {
         this.drawDefaultBackground();
-        super.drawScreen(mouseX, mouseY, partialTicks);
+        super.render(mouseX, mouseY, partialTicks);
         this.renderHoveredToolTip(mouseX, mouseY);
     }
 	
