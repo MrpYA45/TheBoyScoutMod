@@ -9,6 +9,7 @@ import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFood;
 import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFoodDrink;
 import com.MrpYA45.TheBoyScoutMod.items.ItemDryLeaf;
 import com.MrpYA45.TheBoyScoutMod.items.ItemStrawberry;
+import com.MrpYA45.TheBoyScoutMod.items.backpack.ItemBackpack;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemBlowgun;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemScoutSpadeTool;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemSlingshot;
@@ -33,7 +34,7 @@ public class ModItems {
 	public static final Item PEBBLE = new ItemBase("pebble");
 	public static final Item LEAF = new ItemBase("leaf");
 	public static final Item DRY_LEAF = new ItemDryLeaf("dry_leaf");
-	public static final Item BACKPACK = new ItemBase("backpack");
+	public static final Item BACKPACK = new ItemBackpack();
 	public static final Item BLUE_POWDER = new ItemBluePowder("blue_powder");
 	public static final Item BLUEBERRIES_SEEDS = new ItemBlueberriesSeeds("blueberries_seeds");
 	public static final Item WOOD_GOLEM_STATUETTE = new ItemBase("wood_golem_statuette");
@@ -93,7 +94,8 @@ public class ModItems {
 				HOT_MILK,
 				CHOCOLATE_BAR,
 				HOT_CHOCOLATE,
-				STRAWBERRY
+				STRAWBERRY,
+				SCOUT_SHOVEL
 			};
 			
 			event.getRegistry().registerAll(item);

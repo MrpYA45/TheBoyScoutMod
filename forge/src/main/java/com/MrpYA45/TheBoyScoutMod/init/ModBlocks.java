@@ -1,5 +1,7 @@
 package com.MrpYA45.TheBoyScoutMod.init;
 
+import static com.MrpYA45.TheBoyScoutMod.util.InjectionUtil.Null;
+
 import com.MrpYA45.TheBoyScoutMod.Main;
 import com.MrpYA45.TheBoyScoutMod.blocks.BlockBase;
 import com.MrpYA45.TheBoyScoutMod.blocks.BlockBluePowder;
@@ -15,6 +17,7 @@ import com.MrpYA45.TheBoyScoutMod.blocks.BlockRocksPath;
 import com.MrpYA45.TheBoyScoutMod.blocks.BlockRope;
 import com.MrpYA45.TheBoyScoutMod.blocks.BlockStrawberryPlant;
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.paper_bin.BlockPaperBin;
+import com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box.BlockWoodenBox;
 import com.google.common.base.Preconditions;
 
 import net.minecraft.block.Block;
@@ -32,13 +35,13 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(Main.MOD_ID)
 public class ModBlocks {
 	
-	public static final Block HAZEL_WOOD_BLOCK = new BlockLogCustom("hazel_wood_block");
-	public static final Block HAZEL_PLANKS_BLOCK = new BlockBase("hazel_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD);
-	public static final Block PALM_WOOD_BLOCK = new BlockLogCustom("palm_wood_block");
-	public static final Block PALM_PLANKS_BLOCK = new BlockBase("palm_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD);
-	public static final Block BAOBAB_WOOD_BLOCK = new BlockLogCustom("baobab_wood_block");
-	public static final Block BAOBAB_PLANKS_BLOCK = new BlockBase("baobab_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD);
-	public static final Block HAZEL_LEAVES_BLOCK = new BlockLeavesCustom("hazel_leaves_block");
+	public static final BlockLogCustom HAZEL_WOOD_BLOCK = Null();
+	public static final Block HAZEL_PLANKS_BLOCK = Null();
+	public static final Block PALM_WOOD_BLOCK = Null();
+	public static final Block PALM_PLANKS_BLOCK = Null();
+	public static final Block BAOBAB_WOOD_BLOCK = Null();
+	public static final Block BAOBAB_PLANKS_BLOCK = Null();
+	public static final Block HAZEL_LEAVES_BLOCK = Null();
 	public static final Block PALM_LEAVES_BLOCK = new BlockLeavesCustom("palm_leaves_block");
 	public static final Block BLUE_FLOWER_BLOCK = new BlockFlowerCustom("blue_flower_block");
 	public static final Block PINK_FLOWER_BLOCK = new BlockFlowerCustom("pink_flower_block");
@@ -62,7 +65,7 @@ public class ModBlocks {
 	public static final Block CLEAR_STONE_BRICK_BLOCK = new BlockBase("clear_stone_brick_block", Material.ROCK, 1.5F, 6.0F, SoundType.STONE);
 	public static final Block CLEAR_COBBLESTONE_BLOCK = new BlockBase("clear_cobblestone_block", Material.ROCK, 2.0F, 6.0F, SoundType.STONE);
 	public static final Block BLUEBERRIES_BUSH_BLOCK = new BlockBlueberriesBush("blueberries_bush_block");
-//	public static final Block WOODEN_BOX_BLOCK = new BlockWoodenBox("wooden_box_block");
+	public static final Block WOODEN_BOX_BLOCK = Null();
 //	public static final Block IRON_BOX_BLOCK = new BlockIronBox("iron_box_block");
 //	public static final Block GOLD_BOX_BLOCK = new BlockGoldBox("gold_box_block");
 //	public static final Block DIAMOND_BOX_BLOCK = new BlockDiamondBox("diamond_box_block");
@@ -80,13 +83,13 @@ public class ModBlocks {
 		@SubscribeEvent
 		public static void registerBlock(final RegistryEvent.Register<Block> event) {
 			final Block[] blocks = {
-					HAZEL_WOOD_BLOCK,
-					HAZEL_PLANKS_BLOCK,
-					PALM_WOOD_BLOCK,
-					PALM_PLANKS_BLOCK,
-					BAOBAB_WOOD_BLOCK,
-					BAOBAB_PLANKS_BLOCK,
-					HAZEL_LEAVES_BLOCK,
+					new BlockLogCustom("hazel_wood_block"),
+					new BlockBase("hazel_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD),
+					new BlockLogCustom("palm_wood_block"),
+					new BlockBase("palm_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD),
+					new BlockLogCustom("baobab_wood_block"),
+					new BlockBase("baobab_planks_block", Material.WOOD, 2.0F, 3.0F, SoundType.WOOD),
+					new BlockLeavesCustom("hazel_leaves_block"),
 					PALM_LEAVES_BLOCK,
 					BLUE_FLOWER_BLOCK,
 					PINK_FLOWER_BLOCK,
@@ -110,6 +113,7 @@ public class ModBlocks {
 					CLEAR_STONE_BRICK_BLOCK,
 					CLEAR_COBBLESTONE_BLOCK,
 					BLUEBERRIES_BUSH_BLOCK,
+					new BlockWoodenBox("wooden_box_block"),
 					
 					PAPER_BIN_BLOCK,
 					HANDHELD_LANTERN_BLOCK,
@@ -155,6 +159,7 @@ public class ModBlocks {
 					new ItemBlock(CLEAR_STONE_BRICK_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
 					new ItemBlock(CLEAR_COBBLESTONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
 					new ItemBlock(BLUEBERRIES_BUSH_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new ItemBlock(WOODEN_BOX_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
 					
 					new ItemBlock(PAPER_BIN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
 					new ItemBlock(HANDHELD_LANTERN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
