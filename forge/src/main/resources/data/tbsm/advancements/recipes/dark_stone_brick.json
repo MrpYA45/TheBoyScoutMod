@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tbsm:dark_stone_brick"
+    ]
+  },
+  "criteria": {
+    "has_dark_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tbsm:dark_stone_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tbsm:dark_stone_brick"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dark_stone",
+      "has_the_recipe"
+    ]
+  ]
+}

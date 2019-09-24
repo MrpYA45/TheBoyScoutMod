@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "tbsm:gold_box_block"
+        },
+        "title": {
+            "translate": "tbsm.advancements.story.storage_plus_plus.title"
+        },
+        "description": {
+            "translate": "tbsm.advancements.story.storage_plus_plus.description"
+        }
+    },
+    "parent": "tbsm:story/storage_plus",
+    "criteria": {
+        "gold_box_block": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+					{
+						"item": "tbsm:gold_box_block"
+					}
+				]
+            }
+        }
+    }
+}

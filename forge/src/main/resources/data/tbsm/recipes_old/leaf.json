@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shapeless",
+    "ingredients": [
+    {
+        "item": "minecraft:shears"
+    },
+    {
+        "type": "forge:ore_dict",
+        "ore": "treeLeaves"
+    }
+    ],
+    "result": {
+        "item": "tbsm:leaf",
+		"count": 4
+    }
+}

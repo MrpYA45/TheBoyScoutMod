@@ -4,16 +4,19 @@ import com.MrpYA45.TheBoyScoutMod.Main;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityPenguin;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelPenguin;
 
-import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class RenderPenguin extends RenderLiving<EntityPenguin> {
+@OnlyIn(Dist.CLIENT)
+public class RenderPenguin extends MobRenderer<EntityPenguin, ModelPenguin<EntityPenguin>> {
 
-	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID + ":textures/entity/penguin.png");
+	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID, "textures/entity/penguin.png");
 
-	public RenderPenguin(RenderManager manager) {
-		super(manager, new ModelPenguin(), 0.5F);
+	public RenderPenguin(EntityRendererManager manager) {
+		super(manager, new ModelPenguin<EntityPenguin>(), 0.5F);
 	}
 
 	@Override

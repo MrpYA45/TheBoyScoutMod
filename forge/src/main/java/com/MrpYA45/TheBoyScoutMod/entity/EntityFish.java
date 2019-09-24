@@ -2,18 +2,18 @@ package com.MrpYA45.TheBoyScoutMod.entity;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityFish extends EntitySquid {
+public class EntityFish extends SquidEntity {
 
-	public EntityFish(World worldIn) {
-		super(worldIn);
-		this.setSize(0.2F, 0.2F);
+	public EntityFish(EntityType<? extends EntityFish> type, World worldIn) {
+		super(type, worldIn);
 	}
 
 //	@Override
@@ -21,10 +21,10 @@ public class EntityFish extends EntitySquid {
 //	return true;
 //	}
 
-	@Override
-	public float getEyeHeight() {
-		return 0.15F;
-	}
+//	@Override
+//	public float getEyeHeight(Pose p_213307_1_) {
+//		return 0.15F;
+//	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {

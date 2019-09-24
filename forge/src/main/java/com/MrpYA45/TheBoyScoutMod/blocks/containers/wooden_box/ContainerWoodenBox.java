@@ -2,10 +2,12 @@ package com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.Slot;
+import com.MrpYA45.TheBoyScoutMod.init.ModContainers;
+
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
@@ -13,15 +15,20 @@ import net.minecraftforge.items.SlotItemHandler;
 public class ContainerWoodenBox extends Container {
 	
 	private final TileEntityWoodenBox te;
-	
-	public ContainerWoodenBox(InventoryPlayer player, TileEntityWoodenBox te) {
+
+	public ContainerWoodenBox(final int windowID, PlayerInventory player) {
+		this(windowID, player, new TileEntityWoodenBox());
+	}
+
+	public ContainerWoodenBox(final int windowID, PlayerInventory player, TileEntityWoodenBox te) {
+		super(ModContainers.WOODEN_BOX, windowID);
 		this.te  = te;
 		ItemStackHandler inventory = te.getInventory();
 		addOwnSlots(inventory);
 		addPlayerSlots(player);
 	}
 
-	private void addPlayerSlots(InventoryPlayer player) {
+	private void addPlayerSlots(PlayerInventory player) {
 		//Main Inventory
 		for (int row = 0; row < 3; row++) {
 			for (int col = 0; col < 9; col++) {
@@ -66,7 +73,7 @@ public class ContainerWoodenBox extends Container {
 	
 	@Nullable
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+	public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.inventorySlots.get(index);
 		
@@ -93,7 +100,7 @@ public class ContainerWoodenBox extends Container {
 	}
 	
 	@Override
-	public boolean canInteractWith(EntityPlayer playerIn) {
+	public boolean canInteractWith(PlayerEntity playerIn) {
 		return this.te.interact(playerIn);
 	}
 

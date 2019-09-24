@@ -4,16 +4,16 @@ import com.MrpYA45.TheBoyScoutMod.Main;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelGolem;
 
-import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderGolem extends RenderLiving<EntityGolem> {
+public class RenderGolem extends MobRenderer<EntityGolem, ModelGolem<EntityGolem>> {
 
-	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID + ":textures/entity/golem.png");
+	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID, "textures/entity/golem.png");
 
-	public RenderGolem(RenderManager manager) {
-		super(manager, new ModelGolem(), 0.5F);
+	public RenderGolem(EntityRendererManager manager) {
+		super(manager, new ModelGolem<EntityGolem>(), 0.5F);
 	}
 
 	@Override

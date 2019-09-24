@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern":
+	[
+		"GWG",
+		"WBW",
+		"GWG"
+    ],
+	"key":
+	{
+		"G":
+		{
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
+		},
+		"W":
+		{
+            "type": "forge:ore_dict",
+            "ore": "plankWood"
+		},
+		"B":
+		{
+            "item": "tbsm:iron_box_block"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:gold_box_block"
+    }
+}

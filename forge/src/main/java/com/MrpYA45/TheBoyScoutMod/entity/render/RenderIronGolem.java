@@ -5,7 +5,7 @@ import com.MrpYA45.TheBoyScoutMod.entity.EntityIronGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelGolem;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderIronGolem extends RenderLiving<EntityIronGolem> {
@@ -13,7 +13,7 @@ public class RenderIronGolem extends RenderLiving<EntityIronGolem> {
 	public static final ResourceLocation TEXTURES = new ResourceLocation(
 			Main.MOD_ID + ":textures/entity/golem_iron.png");
 
-	public RenderIronGolem(RenderManager manager) {
+	public RenderIronGolem(EntityRendererManager manager) {
 		super(manager, new ModelGolem(), 0.5F);
 	}
 

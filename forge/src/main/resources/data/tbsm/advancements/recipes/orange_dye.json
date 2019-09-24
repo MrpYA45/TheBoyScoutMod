@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tbsm:orange_dye"
+    ]
+  },
+  "criteria": {
+    "has_orange_flower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tbsm:orange_flower_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tbsm:orange_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_orange_flower",
+      "has_the_recipe"
+    ]
+  ]
+}

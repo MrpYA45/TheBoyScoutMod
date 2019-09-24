@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern":
+	[
+		"GGG",
+		"WDW"
+    ],
+	"key":
+	{
+		"W":
+		{
+            "type": "forge:ore_dict",
+            "ore": "logWood"
+		},
+		"G":
+		{
+            "type": "forge:ore_dict",
+            "ore": "blockGlass"
+		},
+		"D":
+		{
+            "type": "forge:ore_dict",
+            "ore": "dustGlowstone"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:light_bar_block"
+    }
+}

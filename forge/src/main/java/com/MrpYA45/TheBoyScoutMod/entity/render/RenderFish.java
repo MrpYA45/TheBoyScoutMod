@@ -4,16 +4,16 @@ import com.MrpYA45.TheBoyScoutMod.Main;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityFish;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelFish;
 
-import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderFish extends RenderLiving<EntityFish> {
+public class RenderFish extends MobRenderer<EntityFish, ModelFish<EntityFish>> {
 
-	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID + ":textures/entity/fish.png");
+	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID, "textures/entity/fish.png");
 
-	public RenderFish(RenderManager manager) {
-		super(manager, new ModelFish(), 0.5F);
+	public RenderFish(EntityRendererManager manager) {
+		super(manager, new ModelFish<EntityFish>(), 0.5F);
 	}
 
 	@Override

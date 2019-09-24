@@ -5,7 +5,7 @@ import com.MrpYA45.TheBoyScoutMod.entity.EntityStoneGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelGolem;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderStoneGolem extends RenderLiving<EntityStoneGolem> {
@@ -13,7 +13,7 @@ public class RenderStoneGolem extends RenderLiving<EntityStoneGolem> {
 	public static final ResourceLocation TEXTURES = new ResourceLocation(
 			Main.MOD_ID + ":textures/entity/golem_stone.png");
 
-	public RenderStoneGolem(RenderManager manager) {
+	public RenderStoneGolem(EntityRendererManager manager) {
 		super(manager, new ModelGolem(), 0.5F);
 	}
 

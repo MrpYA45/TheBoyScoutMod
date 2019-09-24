@@ -1,9 +1,9 @@
 package com.MrpYA45.TheBoyScoutMod.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.common.ToolType;
 
 public class BlockBase extends Block {
@@ -14,12 +14,12 @@ public class BlockBase extends Block {
 	
 	
 	@Override
-	public int getHarvestLevel(IBlockState state) {
+	public int getHarvestLevel(BlockState state) {
 		return 2;
 	}
 	
 	@Override
-	public ToolType getHarvestTool(IBlockState state) {
+	public ToolType getHarvestTool(BlockState state) {
 		return ToolType.PICKAXE;
 	}
 

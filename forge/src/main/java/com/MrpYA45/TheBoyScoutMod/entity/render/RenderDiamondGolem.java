@@ -5,7 +5,7 @@ import com.MrpYA45.TheBoyScoutMod.entity.EntityDiamondGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelGolem;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderDiamondGolem extends RenderLiving<EntityDiamondGolem> {
@@ -13,7 +13,7 @@ public class RenderDiamondGolem extends RenderLiving<EntityDiamondGolem> {
 	public static final ResourceLocation TEXTURES = new ResourceLocation(
 			Main.MOD_ID + ":textures/entity/golem_diamond.png");
 
-	public RenderDiamondGolem(RenderManager manager) {
+	public RenderDiamondGolem(EntityRendererManager manager) {
 		super(manager, new ModelGolem(), 0.5F);
 	}
 

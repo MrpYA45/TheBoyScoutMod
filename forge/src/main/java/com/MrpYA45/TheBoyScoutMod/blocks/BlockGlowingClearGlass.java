@@ -1,6 +1,6 @@
 package com.MrpYA45.TheBoyScoutMod.blocks;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 
 public class BlockGlowingClearGlass extends BlockClearGlass {
 
@@ -9,7 +9,7 @@ public class BlockGlowingClearGlass extends BlockClearGlass {
 	}
 	
 	@Override
-	public int getLightValue(IBlockState state) {
+	public int getLightValue(BlockState state) {
 		return 7;
 	}
 

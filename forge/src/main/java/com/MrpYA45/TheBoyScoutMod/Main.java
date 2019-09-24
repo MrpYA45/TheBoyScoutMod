@@ -1,21 +1,19 @@
 package com.MrpYA45.TheBoyScoutMod;
 
 import com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box.GuiWoodenBox;
-import com.MrpYA45.TheBoyScoutMod.blocks.containers.wooden_box.TileEntityWoodenBox;
+import com.MrpYA45.TheBoyScoutMod.init.ModContainers;
 import com.MrpYA45.TheBoyScoutMod.init.ModTabTBSM;
 import com.MrpYA45.TheBoyScoutMod.util.TBSMConfig;
+import com.MrpYA45.TheBoyScoutMod.util.handlers.RenderHandler;
+import com.MrpYA45.TheBoyScoutMod.worldgen.TBSMFlowersFeature;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenOreGen;
 import com.MrpYA45.TheBoyScoutMod.worldgen.WorldGenTBSMFlowers;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -26,6 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Main.MOD_ID)
 public class Main {
@@ -38,19 +37,22 @@ public class Main {
 
 //		ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.GUIFACTORY, () -> GuiHandler::DisplayStorageGUI);
 
-		ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.GUIFACTORY, () -> {
-			return (openContainer) -> {
-				ResourceLocation location = openContainer.getId();
-				if(location.toString().equals(MOD_ID + ":wooden_box_gui")) {
-					EntityPlayerSP player = Minecraft.getInstance().player;
-					BlockPos pos = openContainer.getAdditionalData().readBlockPos();
-					TileEntity tile = player.world.getTileEntity(pos);
-					if(tile instanceof TileEntityWoodenBox) return new GuiWoodenBox(player.inventory, (TileEntityWoodenBox) tile);
-				}
-				return null;
-			};
-		});
+//		ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.GUIFACTORY, () -> {
+//			return (openContainer) -> {
+//				ResourceLocation location = openContainer.getId();
+//				if(location.toString().equals(MOD_ID + ":wooden_box_gui")) {
+//					PlayerEntitySP player = Minecraft.getInstance().player;
+//					BlockPos pos = openContainer.getAdditionalData().readBlockPos();
+//					TileEntity tile = player.world.getTileEntity(pos);
+//					if(tile instanceof TileEntityWoodenBox) return new GuiWoodenBox(player.inventory, (TileEntityWoodenBox) tile);
+//				}
+//				return null;
+//			};
+//		});
 
+		TBSMFlowersFeature feature = new TBSMFlowersFeature(NoFeatureConfig::deserialize);
+		feature.setRegistryName("tbsm_flowers");
+		ForgeRegistries.FEATURES.register(feature);
 		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, TBSMConfig.SERVER_SPEC);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -66,7 +68,8 @@ public class Main {
 	}
 	
 	public void clientSetup(final FMLClientSetupEvent event) {
-		
+		ScreenManager.registerFactory(ModContainers.WOODEN_BOX, GuiWoodenBox::new);
+		RenderHandler.registerEntityRenders();
 	}
 	
 	public void enqueueIMC(final InterModEnqueueEvent event) {

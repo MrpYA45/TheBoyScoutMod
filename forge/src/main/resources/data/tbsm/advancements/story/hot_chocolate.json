@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "item": "tbsm:hot_chocolate"
+        },
+        "title": {
+            "translate": "tbsm.advancements.story.hot_chocolate.title"
+        },
+        "description": {
+            "translate": "tbsm.advancements.story.hot_chocolate.description"
+        }
+    },
+    "parent": "tbsm:story/first_look",
+    "criteria": {
+        "hot_chocolate": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+				    "item": "tbsm:hot_chocolate"
+				}
+            }
+        }
+    }
+}

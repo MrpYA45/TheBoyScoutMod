@@ -3,105 +3,95 @@
 // Keep in mind that you still need to fill in some blanks
 // - ZeuX
 
-
-
-
-
-
 package com.MrpYA45.TheBoyScoutMod.entity.model;
 
-import net.minecraft.client.renderer.entity.model.ModelBase;
-import net.minecraft.client.renderer.entity.model.ModelRenderer;
+import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class ModelPenguin extends ModelBase
-{
-  //fields
-    ModelRenderer Pie_izquierdo;
-    ModelRenderer Pie_derecho;
-    ModelRenderer Cuerpo;
-    ModelRenderer Brazo_izquierdo;
-    ModelRenderer Brazo_derecho;
-    ModelRenderer Cabeza;
-    ModelRenderer Pico;
-  
-  public ModelPenguin()
-  {
-    textureWidth = 64;
-    textureHeight = 32;
-    
-      Pie_izquierdo = new ModelRenderer(this, 11, 0);
-      Pie_izquierdo.addBox(-2F, 0F, 0F, 2, 1, 3);
-      Pie_izquierdo.setRotationPoint(0F, 23F, 0F);
-      Pie_izquierdo.setTextureSize(64, 32);
-      Pie_izquierdo.mirror = true;
-      setRotation(Pie_izquierdo, 0F, 0F, 0F);
-      Pie_derecho = new ModelRenderer(this, 0, 0);
-      Pie_derecho.addBox(0F, 0F, 0F, 2, 1, 3);
-      Pie_derecho.setRotationPoint(0F, 23F, 0F);
-      Pie_derecho.setTextureSize(64, 32);
-      Pie_derecho.mirror = true;
-      setRotation(Pie_derecho, 0F, 0F, 0F);
-      Cuerpo = new ModelRenderer(this, 50, 0);
-      Cuerpo.addBox(0F, 0F, 0F, 4, 6, 3);
-      Cuerpo.setRotationPoint(-2F, 18F, 0.5F);
-      Cuerpo.setTextureSize(64, 32);
-      Cuerpo.mirror = true;
-      setRotation(Cuerpo, 0F, 0F, 0F);
-      Brazo_izquierdo = new ModelRenderer(this, 55, 28);
-      Brazo_izquierdo.addBox(0F, 0F, 0F, 1, 3, 1);
-      Brazo_izquierdo.setRotationPoint(-2.5F, 19F, 1.5F);
-      Brazo_izquierdo.setTextureSize(64, 32);
-      Brazo_izquierdo.mirror = true;
-      setRotation(Brazo_izquierdo, 0F, 0F, 0F);
-      Brazo_derecho = new ModelRenderer(this, 60, 28);
-      Brazo_derecho.addBox(0F, 0F, 0F, 1, 3, 1);
-      Brazo_derecho.setRotationPoint(1.533333F, 19F, 1.5F);
-      Brazo_derecho.setTextureSize(64, 32);
-      Brazo_derecho.mirror = true;
-      setRotation(Brazo_derecho, 0F, 0F, 0F);
-      Cabeza = new ModelRenderer(this, 36, 0);
-      Cabeza.addBox(0F, 0F, 0F, 3, 3, 3);
-      Cabeza.setRotationPoint(-1.5F, 15F, 0.2333333F);
-      Cabeza.setTextureSize(64, 32);
-      Cabeza.mirror = true;
-      setRotation(Cabeza, 0F, 0F, 0F);
-      Pico = new ModelRenderer(this, 0, 29);
-      Pico.addBox(0F, 0F, 0F, 1, 1, 2);
-      Pico.setRotationPoint(-0.5F, 17F, -1F);
-      Pico.setTextureSize(64, 32);
-      Pico.mirror = true;
-      setRotation(Pico, 0F, 0F, 0F);
-  }
-  
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    Pie_izquierdo.render(f5);
-    Pie_derecho.render(f5);
-    Cuerpo.render(f5);
-    Brazo_izquierdo.render(f5);
-    Brazo_derecho.render(f5);
-    Cabeza.render(f5);
-    Pico.render(f5);
-  }
-  
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e)
-  {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+public class ModelPenguin<T extends Entity> extends EntityModel<T> {
+	// fields
+	RendererModel Pie_izquierdo;
+	RendererModel Pie_derecho;
+	RendererModel Cuerpo;
+	RendererModel Brazo_izquierdo;
+	RendererModel Brazo_derecho;
+	RendererModel Cabeza;
+	RendererModel Pico;
+
+	public ModelPenguin() {
+		textureWidth = 64;
+		textureHeight = 32;
+
+		Pie_izquierdo = new RendererModel(this, 11, 0);
+		Pie_izquierdo.addBox(-2F, 0F, 0F, 2, 1, 3);
+		Pie_izquierdo.setRotationPoint(0F, 23F, 0F);
+		Pie_izquierdo.setTextureSize(64, 32);
+		Pie_izquierdo.mirror = true;
+		setRotation(Pie_izquierdo, 0F, 0F, 0F);
+		Pie_derecho = new RendererModel(this, 0, 0);
+		Pie_derecho.addBox(0F, 0F, 0F, 2, 1, 3);
+		Pie_derecho.setRotationPoint(0F, 23F, 0F);
+		Pie_derecho.setTextureSize(64, 32);
+		Pie_derecho.mirror = true;
+		setRotation(Pie_derecho, 0F, 0F, 0F);
+		Cuerpo = new RendererModel(this, 50, 0);
+		Cuerpo.addBox(0F, 0F, 0F, 4, 6, 3);
+		Cuerpo.setRotationPoint(-2F, 18F, 0.5F);
+		Cuerpo.setTextureSize(64, 32);
+		Cuerpo.mirror = true;
+		setRotation(Cuerpo, 0F, 0F, 0F);
+		Brazo_izquierdo = new RendererModel(this, 55, 28);
+		Brazo_izquierdo.addBox(0F, 0F, 0F, 1, 3, 1);
+		Brazo_izquierdo.setRotationPoint(-2.5F, 19F, 1.5F);
+		Brazo_izquierdo.setTextureSize(64, 32);
+		Brazo_izquierdo.mirror = true;
+		setRotation(Brazo_izquierdo, 0F, 0F, 0F);
+		Brazo_derecho = new RendererModel(this, 60, 28);
+		Brazo_derecho.addBox(0F, 0F, 0F, 1, 3, 1);
+		Brazo_derecho.setRotationPoint(1.533333F, 19F, 1.5F);
+		Brazo_derecho.setTextureSize(64, 32);
+		Brazo_derecho.mirror = true;
+		setRotation(Brazo_derecho, 0F, 0F, 0F);
+		Cabeza = new RendererModel(this, 36, 0);
+		Cabeza.addBox(0F, 0F, 0F, 3, 3, 3);
+		Cabeza.setRotationPoint(-1.5F, 15F, 0.2333333F);
+		Cabeza.setTextureSize(64, 32);
+		Cabeza.mirror = true;
+		setRotation(Cabeza, 0F, 0F, 0F);
+		Pico = new RendererModel(this, 0, 29);
+		Pico.addBox(0F, 0F, 0F, 1, 1, 2);
+		Pico.setRotationPoint(-0.5F, 17F, -1F);
+		Pico.setTextureSize(64, 32);
+		Pico.mirror = true;
+		setRotation(Pico, 0F, 0F, 0F);
+	}
+
+	public void render(T entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+		Pie_izquierdo.render(f5);
+		Pie_derecho.render(f5);
+		Cuerpo.render(f5);
+		Brazo_izquierdo.render(f5);
+		Brazo_derecho.render(f5);
+		Cabeza.render(f5);
+		Pico.render(f5);
+	}
+
+	private void setRotation(RendererModel model, float x, float y, float z) {
+		model.rotateAngleX = x;
+		model.rotateAngleY = y;
+		model.rotateAngleZ = z;
+	}
+
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, T e) {
+		super.setRotationAngles(e, f, f1, f2, f3, f4, f5);
 		this.Pie_izquierdo.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		this.Pie_derecho.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		this.Brazo_izquierdo.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * 2.0F * f1 * 0.5F;
 		this.Brazo_derecho.rotateAngleX = MathHelper.cos(f * 0.6662F) * 2.0F * f1 * 0.5F;
-  }
+	}
 
 }

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "cyan_dye",
+    "pattern":
+	[
+		"B"
+    ],
+	"key":
+	{
+		"B":
+		{
+            "item": "tbsm:blue_flower_block"
+		}
+	},
+    "result":
+	{
+        "item": "minecraft:dye",
+		"data": 6,
+		"count": 2
+    }
+}

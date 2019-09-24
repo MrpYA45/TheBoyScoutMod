@@ -1,15 +1,12 @@
 package com.MrpYA45.TheBoyScoutMod.init;
 
 import com.MrpYA45.TheBoyScoutMod.Main;
-import com.MrpYA45.TheBoyScoutMod.items.ItemBase;
-import com.MrpYA45.TheBoyScoutMod.items.ItemBluePowder;
-import com.MrpYA45.TheBoyScoutMod.items.ItemBlueberries;
-import com.MrpYA45.TheBoyScoutMod.items.ItemBlueberriesSeeds;
-import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFood;
-import com.MrpYA45.TheBoyScoutMod.items.ItemCustomFoodDrink;
-import com.MrpYA45.TheBoyScoutMod.items.ItemDryLeaf;
-import com.MrpYA45.TheBoyScoutMod.items.ItemStrawberry;
-import com.MrpYA45.TheBoyScoutMod.items.backpack.ItemBackpack;
+import com.MrpYA45.TheBoyScoutMod.items.TBSMBaseItem;
+import com.MrpYA45.TheBoyScoutMod.items.BluePowderItem;
+import com.MrpYA45.TheBoyScoutMod.items.BlueberriesSeedsItem;
+import com.MrpYA45.TheBoyScoutMod.items.TBSMDrinkableFoodsItem;
+import com.MrpYA45.TheBoyScoutMod.items.DryLeafItem;
+import com.MrpYA45.TheBoyScoutMod.items.StrawberryItem;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemBlowgun;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemScoutSpadeTool;
 import com.MrpYA45.TheBoyScoutMod.tools.ItemSlingshot;
@@ -26,35 +23,35 @@ public class ModItems {
 
 	//Items
 
-	public static final Item THE_DIARY_OF_THE_SCOUT = new ItemBase("the_diary_of_the_scout");
-	public static final Item KNIFE = new ItemBase("knife");
+	public static final Item THE_DIARY_OF_THE_SCOUT = new TBSMBaseItem("the_diary_of_the_scout");
+	public static final Item KNIFE = new TBSMBaseItem("knife");
 	public static final Item BLOWGUN = new ItemBlowgun("blowgun");
-	public static final Item DART = new ItemBase("dart");
+	public static final Item DART = new TBSMBaseItem("dart");
 	public static final Item SLINGSHOT = new ItemSlingshot("slingshot");
-	public static final Item PEBBLE = new ItemBase("pebble");
-	public static final Item LEAF = new ItemBase("leaf");
-	public static final Item DRY_LEAF = new ItemDryLeaf("dry_leaf");
-	public static final Item BACKPACK = new ItemBackpack();
-	public static final Item BLUE_POWDER = new ItemBluePowder("blue_powder");
-	public static final Item BLUEBERRIES_SEEDS = new ItemBlueberriesSeeds("blueberries_seeds");
-	public static final Item WOOD_GOLEM_STATUETTE = new ItemBase("wood_golem_statuette");
-	public static final Item STONE_GOLEM_STATUETTE = new ItemBase("stone_golem_statuette");
-	public static final Item IRON_GOLEM_STATUETTE = new ItemBase("iron_golem_statuette");
-	public static final Item GOLD_GOLEM_STATUETTE = new ItemBase("gold_golem_statuette");
-	public static final Item DIAMOND_GOLEM_STATUETTE = new ItemBase("diamond_golem_statuette");
-	public static final Item EMERALD_GOLEM_STATUETTE = new ItemBase("emerald_golem_statuette");
-	public static final Item CHAINSAW = new ItemBase("chainsaw");
-	public static final Item BREAD_SLICE = new ItemCustomFood("bread_slice",3,0.3F, false);
-	public static final Item HAZELNUT = new ItemBase("hazelnut");
-	public static final Item COCOA_CREAM = new ItemCustomFood("cocoa_cream", 4, 0.3F, false);
-	public static final Item CHOCOLATE_SANDWICH = new ItemCustomFood("chocolate_sandwich", 5, 0.3F,false);
-	public static final Item BLUEBERRIES = new ItemBlueberries("blueberries", 1, 0.2F, false);
-	public static final Item FRIED_EGG = new ItemCustomFood("fried_egg", 5, 0.3F, false);	
-	public static final Item CHEESE = new ItemCustomFood("cheese", 4, 0.3F,false);
-	public static final Item HOT_MILK = new ItemCustomFoodDrink("hot_milk", 3, 0.3F,false);
-	public static final Item CHOCOLATE_BAR = new ItemCustomFood("chocolate_bar", 6, 0.3F, false);
-	public static final Item HOT_CHOCOLATE = new ItemCustomFoodDrink("hot_chocolate", 7, 0.3F, false);
-	public static final Item STRAWBERRY = new ItemStrawberry("strawberry", 4, 0.3F, false);
+	public static final Item PEBBLE = new TBSMBaseItem("pebble");
+	public static final Item LEAF = new TBSMBaseItem("leaf");
+	public static final Item DRY_LEAF = new DryLeafItem("dry_leaf");
+//	public static final Item BACKPACK = new ItemBackpack();
+	public static final Item BLUE_POWDER = new BluePowderItem("blue_powder");
+	public static final Item BLUEBERRIES_SEEDS = new BlueberriesSeedsItem("blueberries_seeds");
+	public static final Item WOOD_GOLEM_STATUETTE = new TBSMBaseItem("wood_golem_statuette");
+	public static final Item STONE_GOLEM_STATUETTE = new TBSMBaseItem("stone_golem_statuette");
+	public static final Item IRON_GOLEM_STATUETTE = new TBSMBaseItem("iron_golem_statuette");
+	public static final Item GOLD_GOLEM_STATUETTE = new TBSMBaseItem("gold_golem_statuette");
+	public static final Item DIAMOND_GOLEM_STATUETTE = new TBSMBaseItem("diamond_golem_statuette");
+	public static final Item EMERALD_GOLEM_STATUETTE = new TBSMBaseItem("emerald_golem_statuette");
+	public static final Item CHAINSAW = new TBSMBaseItem("chainsaw");
+	public static final Item BREAD_SLICE = new TBSMBaseItem("bread_slice", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.BREAD_SLICE));
+	public static final Item HAZELNUT = new TBSMBaseItem("hazelnut");
+	public static final Item COCOA_CREAM = new TBSMBaseItem("cocoa_cream", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.COCOA_CREAM));
+	public static final Item CHOCOLATE_SANDWICH = new TBSMBaseItem("chocolate_sandwich", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.CHOCOLATE_SANDWICH));
+	public static final Item BLUEBERRIES = new TBSMBaseItem("blueberries", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.BLUEBERRIES));
+	public static final Item FRIED_EGG = new TBSMBaseItem("fried_egg", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.FRIED_EGG));	
+	public static final Item CHEESE = new TBSMBaseItem("cheese", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.CHEESE));
+	public static final Item HOT_MILK = new TBSMDrinkableFoodsItem("hot_milk", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.HOT_MILK));
+	public static final Item CHOCOLATE_BAR = new TBSMBaseItem("chocolate_bar", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.CHOCOLATE_BAR));
+	public static final Item HOT_CHOCOLATE = new TBSMDrinkableFoodsItem("hot_chocolate", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.HOT_CHOCOLATE));
+	public static final Item STRAWBERRY = new StrawberryItem("strawberry", new Item.Properties().group(Main.TBSM_TAB).food(ModFoods.STRAWBERRY));
 
 	//Tools
 
@@ -74,7 +71,7 @@ public class ModItems {
 				PEBBLE,
 				LEAF,
 				DRY_LEAF,
-				BACKPACK,
+//				BACKPACK,
 				BLUE_POWDER,
 				BLUEBERRIES_SEEDS,
 				WOOD_GOLEM_STATUETTE,

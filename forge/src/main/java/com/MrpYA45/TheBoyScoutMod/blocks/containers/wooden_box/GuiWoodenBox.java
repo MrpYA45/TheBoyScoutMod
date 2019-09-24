@@ -4,19 +4,20 @@ import java.awt.Color;
 
 import com.MrpYA45.TheBoyScoutMod.Main;
 
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
-public class GuiWoodenBox extends GuiContainer {
+public class GuiWoodenBox extends ContainerScreen<ContainerWoodenBox> {
 	public static final int WIDTH = 176;
 	public static final int HEIGHT = 148;
 	
 	private static final ResourceLocation background = new ResourceLocation(Main.MOD_ID + ":textures/gui/wooden_container.png");
 	
-	public GuiWoodenBox(InventoryPlayer player, TileEntityWoodenBox inventory) {
-		super(new ContainerWoodenBox(player, inventory));
+	public GuiWoodenBox(ContainerWoodenBox container, PlayerInventory player, ITextComponent name) {
+		super(container, player, name);
 		
 		xSize = WIDTH;
 		ySize = HEIGHT;
@@ -24,20 +25,20 @@ public class GuiWoodenBox extends GuiContainer {
 
 	@Override
 	public void render(int mouseX, int mouseY, float partialTicks) {
-        this.drawDefaultBackground();
+        this.drawGuiContainerBackgroundLayer(partialTicks, mouseX, mouseY);
         super.render(mouseX, mouseY, partialTicks);
         this.renderHoveredToolTip(mouseX, mouseY);
     }
 	
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        fontRenderer.drawString(new TextComponentTranslation("tile.wooden_box_container.name").getFormattedText(), 8, 6, Color.darkGray.getRGB());
+        font.drawString(new TranslationTextComponent("tile.wooden_box_container.name").getFormattedText(), 8, 6, Color.darkGray.getRGB());
     }
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-		mc.getTextureManager().bindTexture(background);
-		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		minecraft.getTextureManager().bindTexture(background);
+		blit(guiLeft, guiTop, 0, 0, xSize, ySize);
 	}
 	
 

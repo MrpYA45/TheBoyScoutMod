@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "clearGlass",
+    "pattern":
+	[
+		"BB",
+		"BB"
+    ],
+	"key":
+	{
+		"B":
+		{
+            "type": "forge:ore_dict",
+            "ore": "blockGlassCyan"
+		}
+	},
+    "result":
+	{
+        "item": "tbsm:blue_clear_glass_block",
+		"count": 4
+    }
+}

@@ -3,21 +3,22 @@ package com.MrpYA45.TheBoyScoutMod.blocks;
 import com.MrpYA45.TheBoyScoutMod.init.ModBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReaderBase;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -26,28 +27,27 @@ import net.minecraftforge.common.ToolType;
 public class BlockRope extends Block {
 
 	public BlockRope() {
-		super(Properties.create(Material.CLOTH).sound(SoundType.CLOTH));
+		super(Properties.create(Material.WOOL).sound(SoundType.CLOTH));
 		setRegistryName("rope_block");
 	}
 
 	@Override
-	public ToolType getHarvestTool(IBlockState state) {
+	public ToolType getHarvestTool(BlockState state) {
 		return ToolType.PICKAXE;
 	}
 
-	public boolean isValidPosition(IBlockState state, IWorldReaderBase worldIn, BlockPos pos) {
-		return this.canAttachTo(worldIn, pos.up());
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		return this.canAttachTo(state, worldIn, pos.up());
 	}
 
-	private boolean canAttachTo(IWorldReaderBase worldIn, BlockPos pos) {
-		IBlockState iblockstate = worldIn.getBlockState(pos);
-		boolean flag = isExceptBlockForAttachWithPiston(iblockstate.getBlock());
-		return (!flag && iblockstate.getBlockFaceShape(worldIn, pos, EnumFacing.DOWN) == BlockFaceShape.SOLID
-				&& !iblockstate.canProvidePower()) || iblockstate.getBlock() instanceof BlockRope;
+	private boolean canAttachTo(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return (!state.canProvidePower() && Block.hasSolidSide(state, worldIn, pos, Direction.DOWN))
+				|| state.getBlock() instanceof BlockRope;
 	}
 
-	public IBlockState updatePostPlacement(IBlockState stateIn, EnumFacing facing, IBlockState facingState,
-			IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	@SuppressWarnings("deprecation")
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
+			BlockPos currentPos, BlockPos facingPos) {
 		if (!stateIn.isValidPosition(worldIn, currentPos)) {
 			return Blocks.AIR.getDefaultState();
 		} else {
@@ -56,8 +56,8 @@ public class BlockRope extends Block {
 	}
 
 	@Override
-	public boolean onBlockActivated(IBlockState state, World worldIn, BlockPos pos, EntityPlayer player, EnumHand hand,
-			EnumFacing side, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn,
+			BlockRayTraceResult hit) {
 		if (!worldIn.isRemote) {
 			if (getBlockFromItem(player.inventory.getCurrentItem().getItem()).equals(ModBlocks.ROPE_BLOCK)) {
 				int y = 0;
@@ -80,19 +80,19 @@ public class BlockRope extends Block {
 	}
 
 //	@Override
-//	public boolean isLadder(IBlockState state, IWorldReader world, BlockPos pos, EntityLivingBase entity) {
+//	public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, EntityLivingBase entity) {
 //		return true;
 //	}
 
 	@Override
-	public VoxelShape getShape(IBlockState state, IBlockReader worldIn, BlockPos pos) {
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		return Block.makeCuboidShape(6.0F, 0.0F, 6.0F, 10.0F, 16F, 10.0F);
 	}
 
 	@Override
-	public void onEntityCollision(IBlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		if (entityIn instanceof EntityPlayer) {
-			if (entityIn.motionY >= 0.1) {
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		if (entityIn instanceof PlayerEntity) {
+			if (entityIn.getMotion().getY() >= 0.1) {
 				if (worldIn.getBlockState(pos.add(0, 2, 0)).getBlock().equals(ModBlocks.ROPE_BLOCK)) {
 					entityIn.setPosition(entityIn.posX, entityIn.posY + 0.2F, entityIn.posZ);
 				}
@@ -100,11 +100,11 @@ public class BlockRope extends Block {
 		}
 	}
 
-	public boolean isOpaqueCube(IBlockState state) {
+	public boolean isOpaqueCube(BlockState state) {
 		return false;
 	}
 
-	public boolean isFullCube(IBlockState state) {
+	public boolean isFullCube(BlockState state) {
 		return false;
 	}
 
@@ -113,8 +113,8 @@ public class BlockRope extends Block {
 		return BlockRenderLayer.CUTOUT;
 	}
 
-	@Override
-	public BlockFaceShape getBlockFaceShape(IBlockReader worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
-		return BlockFaceShape.UNDEFINED;
-	}
+//	@Override
+//	public BlockFaceShape getBlockFaceShape(IBlockReader worldIn, BlockState state, BlockPos pos, Direction face) {
+//		return BlockFaceShape.UNDEFINED;
+//	}
 }

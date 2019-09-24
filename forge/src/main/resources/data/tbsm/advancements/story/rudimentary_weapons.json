@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "tbsm:slingshot"
+        },
+        "title": {
+            "translate": "tbsm.advancements.story.rudimentary_weapons.title"
+        },
+        "description": {
+            "translate": "tbsm.advancements.story.rudimentary_weapons.description"
+        }
+    },
+    "parent": "tbsm:story/first_look",
+    "criteria": {
+        "iron_pickaxe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "tbsm:pebble"
+                    }
+                ]
+            }
+        }
+    }
+}

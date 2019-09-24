@@ -24,7 +24,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -127,50 +127,50 @@ public class ModBlocks {
 		}
 		
 		@SubscribeEvent
-		public static void registerItemBlocks(final RegistryEvent.Register<Item> event) {
-			final ItemBlock[] items = {
-					new ItemBlock(HAZEL_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(HAZEL_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(PALM_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(PALM_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BAOBAB_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BAOBAB_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(HAZEL_LEAVES_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(PALM_LEAVES_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BLUE_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(PINK_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(ORANGE_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(WEEDS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BLUE_POWDER_GRAVEL_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(GREEN_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BLUE_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(YELLOW_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(RED_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(WHITE_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(GREEN_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BLUE_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(YELLOW_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(RED_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(WHITE_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(DARK_STONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(DARK_STONE_BRICK_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(DARK_COBBLESTONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(CLEAR_STONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(CLEAR_STONE_BRICK_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(CLEAR_COBBLESTONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(BLUEBERRIES_BUSH_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(WOODEN_BOX_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+		public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
+			final BlockItem[] items = {
+					new BlockItem(HAZEL_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(HAZEL_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(PALM_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(PALM_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BAOBAB_WOOD_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BAOBAB_PLANKS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(HAZEL_LEAVES_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(PALM_LEAVES_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BLUE_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(PINK_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(ORANGE_FLOWER_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(WEEDS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BLUE_POWDER_GRAVEL_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(GREEN_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BLUE_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(YELLOW_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(RED_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(WHITE_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(GREEN_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BLUE_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(YELLOW_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(RED_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(WHITE_GLOWING_CLEAR_GLASS_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(DARK_STONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(DARK_STONE_BRICK_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(DARK_COBBLESTONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(CLEAR_STONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(CLEAR_STONE_BRICK_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(CLEAR_COBBLESTONE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(BLUEBERRIES_BUSH_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(WOODEN_BOX_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
 					
-					new ItemBlock(PAPER_BIN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(HANDHELD_LANTERN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(LIGHT_BAR_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(STRAWBERRY_PLANT, new Item.Properties()),
-					new ItemBlock(ROPE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
-					new ItemBlock(ROCKS_PATH, new Item.Properties().group(Main.TBSM_TAB))
+					new BlockItem(PAPER_BIN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(HANDHELD_LANTERN_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(LIGHT_BAR_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(STRAWBERRY_PLANT, new Item.Properties()),
+					new BlockItem(ROPE_BLOCK, new Item.Properties().group(Main.TBSM_TAB)),
+					new BlockItem(ROCKS_PATH, new Item.Properties().group(Main.TBSM_TAB))
 					
 			};
 			
-			for(final ItemBlock item : items) {
+			for(final BlockItem item : items) {
 				final Block block = item.getBlock();
 				final ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(), "Block %s has a null registry name", block);
 				event.getRegistry().register(item.setRegistryName(registryName));

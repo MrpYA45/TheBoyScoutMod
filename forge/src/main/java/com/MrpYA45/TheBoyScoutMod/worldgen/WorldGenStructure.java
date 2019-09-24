@@ -5,7 +5,7 @@ import java.util.Random;
 import com.MrpYA45.TheBoyScoutMod.util.IStructure;
 import com.MrpYA45.TheBoyScoutMod.util.Reference;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -37,7 +37,7 @@ public class WorldGenStructure extends WorldGenerator implements IStructure {
 		Template template = manager.get(mcServer, location);
 		
 		if(template != null && WorldGenCustomStructures.canSpawnHere(template, worldServer, pos)) {
-			IBlockState state = world.getBlockState(pos);
+			BlockState state = world.getBlockState(pos);
 			world.notifyBlockUpdate(pos, state, state, 3);
 			if(structureName == "palm_tree") {
 				template.addBlocksToWorldChunk(world, pos.up(), settings);

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+	"group": "lime_dye",
+    "pattern":
+	[
+		"W"
+    ],
+	"key":
+	{
+		"W":
+		{
+            "item": "tbsm:weeds_block"
+		}
+	},
+    "result":
+	{
+        "item": "minecraft:dye",
+		"data": 10,
+		"count": 2
+    }
+}

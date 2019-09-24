@@ -19,7 +19,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -47,12 +47,12 @@ public class EntityIronGolem extends EntityAnimal {
 	
     @Override
     protected void initEntityAI() {
-        this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.3F));
-        this.tasks.addTask(3, new EntityAIOcelotAttack(this));
-        this.tasks.addTask(4, new EntityAIMate(this, 0.8D));
-        this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 0.8D, 1.0000001E-5F));
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+        this.goalSelector.addGoal(1, new SwimGoal(this));
+        this.goalSelector.addGoal(2, new EntityAILeapAtTarget(this, 0.3F));
+        this.goalSelector.addGoal(3, new EntityAIOcelotAttack(this));
+        this.goalSelector.addGoal(4, new EntityAIMate(this, 0.8D));
+        this.goalSelector.addGoal(5, new EntityAIWanderAvoidWater(this, 0.8D, 1.0000001E-5F));
+        this.goalSelector.addGoal(6, new EntityAIWatchClosest(this, PlayerEntity.class, 10.0F));
     }
     
     public void updateAITasks()

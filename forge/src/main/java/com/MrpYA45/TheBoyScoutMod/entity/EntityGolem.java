@@ -1,48 +1,36 @@
 package com.MrpYA45.TheBoyScoutMod.entity;
 
-import com.MrpYA45.TheBoyScoutMod.init.ModEntities;
-
-import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILeapAtTarget;
-import net.minecraft.entity.ai.EntityAIMate;
-import net.minecraft.entity.ai.EntityAIOcelotAttack;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.ai.goal.LookAtGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
+import net.minecraft.entity.passive.GolemEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityGolem extends EntityAnimal {
+public class EntityGolem extends GolemEntity
+{
 
-	public EntityGolem(World worldIn) {
-		super(ModEntities.GOLEM, worldIn);
-		this.setSize(0.5F, 1.0F);
+	public EntityGolem(EntityType<? extends EntityGolem> type, World worldIn) {
+		super(type, worldIn);
 	}
 
-	@Override
-	public EntityGolem createChild(EntityAgeable ageable) {
-		return new EntityGolem(world);
-	}
+//	@Override
+//	public float getEyeHeight() {
+//		return 0.9F;
+//	}
 
 	@Override
-	public float getEyeHeight() {
-		return 0.9F;
-	}
-
-	@Override
-	protected void initEntityAI() {
-		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.3F));
-		this.tasks.addTask(3, new EntityAIOcelotAttack(this));
-		this.tasks.addTask(4, new EntityAIMate(this, 0.8D));
-		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 0.8D, 1.0000001E-5F));
-		this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+	protected void registerGoals() {
+		this.goalSelector.addGoal(0, new SwimGoal(this));
+//		this.goalSelector.addGoal(1, new EntityAILeapAtTarget(this, 0.3F));
+//		this.goalSelector.addGoal(2, new EntityAIOcelotAttack(this));
+//		this.goalSelector.addGoal(3, new EntityAIMate(this, 0.8D));
+		this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+		this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 	}
 
 	public void updateAITasks() {
@@ -70,11 +58,6 @@ public class EntityGolem extends EntityAnimal {
 		super.registerAttributes();
 		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
 		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack) {
-		return stack.getItem() == Items.COD;
 	}
 
 	@Override

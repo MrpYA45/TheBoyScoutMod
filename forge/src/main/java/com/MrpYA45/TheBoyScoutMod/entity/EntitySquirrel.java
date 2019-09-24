@@ -3,31 +3,29 @@ package com.MrpYA45.TheBoyScoutMod.entity;
 import com.MrpYA45.TheBoyScoutMod.init.ModEntities;
 import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 
-import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.AgeableEntity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILeapAtTarget;
-import net.minecraft.entity.ai.EntityAIMate;
-import net.minecraft.entity.ai.EntityAIOcelotAttack;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.ai.goal.LookAtGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntitySquirrel extends EntityAnimal {
+public class EntitySquirrel extends AnimalEntity {
 
-	public EntitySquirrel(World worldIn) {
-		super(ModEntities.SQUIRREL, worldIn);
-		this.setSize(0.2F, 0.6F);
+	public EntitySquirrel(EntityType<? extends EntitySquirrel> type, World worldIn) {
+		super(type, worldIn);
 	}
 
+
 	@Override
-	public EntitySquirrel createChild(EntityAgeable ageable) {
-		return new EntitySquirrel(world);
+	public AgeableEntity createChild(AgeableEntity ageable) {
+		return (AgeableEntity) ModEntities.SQUIRREL.create(this.world);
 	}
 
 //	@Override
@@ -35,19 +33,19 @@ public class EntitySquirrel extends EntityAnimal {
 //	return true;
 //	}
 
-	@Override
-	public float getEyeHeight() {
-		return 0.45F;
-	}
+//	@Override
+//	public float getEyeHeight() {
+//		return 0.45F;
+//	}
 
 	@Override
-	protected void initEntityAI() {
-		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.3F));
-		this.tasks.addTask(3, new EntityAIOcelotAttack(this));
-		this.tasks.addTask(4, new EntityAIMate(this, 0.8D));
-		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 0.8D, 1.0000001E-5F));
-		this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+	protected void registerGoals() {
+		this.goalSelector.addGoal(0, new SwimGoal(this));
+//		this.goalSelector.addGoal(1, new EntityAILeapAtTarget(this, 0.3F));
+//		this.goalSelector.addGoal(2, new EntityAIOcelotAttack(this));
+//		this.goalSelector.addGoal(3, new EntityAIMate(this, 0.8D));
+		this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+		this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 	}
 
 	public void updateAITasks() {
@@ -73,7 +71,7 @@ public class EntitySquirrel extends EntityAnimal {
 	protected void registerAttributes() {
 		super.registerAttributes();
 		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
-		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30000001192092896D);
+		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)0.3F);
 	}
 
 	@Override
@@ -95,4 +93,5 @@ public class EntitySquirrel extends EntityAnimal {
 	protected SoundEvent getDeathSound() {
 		return null;
 	}
+
 }
