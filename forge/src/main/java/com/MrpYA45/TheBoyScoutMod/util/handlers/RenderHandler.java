@@ -1,6 +1,6 @@
 package com.MrpYA45.TheBoyScoutMod.util.handlers;
 
-import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityFish;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityPenguin;
@@ -19,7 +19,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = TheBoyScoutMod.MOD_ID, value = Dist.CLIENT)
 public class RenderHandler {
 
 	public static void registerEntityRenders() {

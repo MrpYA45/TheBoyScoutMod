@@ -2,7 +2,7 @@ package com.MrpYA45.TheBoyScoutMod.items;
 
 import java.util.List;
 
-import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class TBSMBaseItem extends Item {
 	
 	public TBSMBaseItem(String name) {
-		super(new Properties().group(Main.TBSM_TAB));
+		super(new Properties().group(TheBoyScoutMod.TBSM_TAB));
 		this.setRegistryName(name);
 	}
 	public TBSMBaseItem(String name, Properties prop) {

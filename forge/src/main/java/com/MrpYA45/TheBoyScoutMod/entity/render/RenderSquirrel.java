@@ -1,6 +1,6 @@
 package com.MrpYA45.TheBoyScoutMod.entity.render;
 
-import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.entity.EntitySquirrel;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelSquirrel;
 
@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class RenderSquirrel extends MobRenderer<EntitySquirrel, ModelSquirrel<EntitySquirrel>> {
 
-	public static final ResourceLocation TEXTURES = new ResourceLocation(Main.MOD_ID, "textures/entity/squirrel.png");
+	public static final ResourceLocation TEXTURES = new ResourceLocation(TheBoyScoutMod.MOD_ID, "textures/entity/squirrel.png");
 
 	public RenderSquirrel(EntityRendererManager manager) {
 		super(manager, new ModelSquirrel<EntitySquirrel>(), 0.5F);

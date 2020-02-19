@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "tbsm:block/shell_block" },
+        "facing=south": { "model": "tbsm:block/shell_block", "y": 180 },
+        "facing=west":  { "model": "tbsm:block/shell_block", "y": 270 },
+        "facing=east":  { "model": "tbsm:block/shell_block", "y": 90 }
+    }
+}

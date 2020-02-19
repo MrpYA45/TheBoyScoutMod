@@ -1,6 +1,6 @@
 package com.MrpYA45.TheBoyScoutMod.init;
 
-import com.MrpYA45.TheBoyScoutMod.Main;
+import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityFish;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityPenguin;
@@ -13,13 +13,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = TheBoyScoutMod.MOD_ID, bus = Bus.MOD)
 public class ModEntities {
 
-	public static final EntityType<?> SQUIRREL = EntityType.Builder.create(EntitySquirrel::new, EntityClassification.CREATURE).size(0.2F, 0.6F).build("squirrel").setRegistryName(Main.MOD_ID, "squirrel");
-	public static final EntityType<?> PENGUIN = EntityType.Builder.create(EntityPenguin::new, EntityClassification.CREATURE).size(0.2F, 0.6F).build("penguin").setRegistryName(Main.MOD_ID, "penguin");
-	public static final EntityType<?> FISH = EntityType.Builder.create(EntityFish::new, EntityClassification.CREATURE).size(0.2F, 0.2F).build("fish").setRegistryName(Main.MOD_ID, "fish");
-	public static final EntityType<?> GOLEM = EntityType.Builder.create(EntityGolem::new, EntityClassification.MISC).size(0.5F, 1.0F).build("golem").setRegistryName(Main.MOD_ID, "golem");
+	public static final EntityType<?> SQUIRREL = EntityType.Builder.create(EntitySquirrel::new, EntityClassification.CREATURE).size(0.2F, 0.6F).build("squirrel").setRegistryName(TheBoyScoutMod.MOD_ID, "squirrel");
+	public static final EntityType<?> PENGUIN = EntityType.Builder.create(EntityPenguin::new, EntityClassification.CREATURE).size(0.2F, 0.6F).build("penguin").setRegistryName(TheBoyScoutMod.MOD_ID, "penguin");
+	public static final EntityType<?> FISH = EntityType.Builder.create(EntityFish::new, EntityClassification.CREATURE).size(0.2F, 0.2F).build("fish").setRegistryName(TheBoyScoutMod.MOD_ID, "fish");
+	public static final EntityType<?> GOLEM = EntityType.Builder.create(EntityGolem::new, EntityClassification.MISC).size(0.5F, 1.0F).build("golem").setRegistryName(TheBoyScoutMod.MOD_ID, "golem");
 
 //	public static void registerEntities() {
 //		registerEntity("squirrel", EntitySquirrel.class, Reference.ENTITY_SQUIRREL, 80, (132 << 16) + (68 << 8) + 7, (64 << 16) + (33 << 8) + 3);
@@ -36,7 +36,7 @@ public class ModEntities {
 //		registerEntity("golem_emerald", EntityEmeraldGolem.class, Reference.ENTITY_EMERALD_GOLEM, 80, (43 << 16) + (29 << 8) + 6, (10 << 16) + (149 << 8) + 98);
 //	}
 
-	@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Bus.MOD)
+	@Mod.EventBusSubscriber(modid = TheBoyScoutMod.MOD_ID, bus = Bus.MOD)
 	public static class Register {
 
 		@SubscribeEvent

@@ -2,6 +2,7 @@ package com.MrpYA45.TheBoyScoutMod.tools;
 
 import java.util.function.Predicate;
 
+import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.init.ModItems;
 
 import net.minecraft.item.BowItem;
@@ -14,7 +15,7 @@ public class ItemSlingshot extends BowItem {
 	};
 
 	public ItemSlingshot(String name) {
-		super(new Properties().defaultMaxDamage(384));
+		super(new Properties().defaultMaxDamage(384).group(TheBoyScoutMod.TBSM_TAB));
 		setRegistryName(name);
 //		setFull3D();
 	}

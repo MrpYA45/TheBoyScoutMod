@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
@@ -33,14 +34,16 @@ public class BlockRope extends Block {
 
 	@Override
 	public ToolType getHarvestTool(BlockState state) {
-		return ToolType.PICKAXE;
+		return ToolType.AXE;
 	}
 
+	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		return this.canAttachTo(state, worldIn, pos.up());
+		return this.canAttachTo(worldIn, pos.up());
 	}
 
-	private boolean canAttachTo(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	private boolean canAttachTo(IBlockReader worldIn, BlockPos pos) {
+		BlockState state = worldIn.getBlockState(pos);
 		return (!state.canProvidePower() && Block.hasSolidSide(state, worldIn, pos, Direction.DOWN))
 				|| state.getBlock() instanceof BlockRope;
 	}
@@ -79,14 +82,14 @@ public class BlockRope extends Block {
 		return false;
 	}
 
-//	@Override
-//	public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, EntityLivingBase entity) {
-//		return true;
-//	}
+	@Override
+	public boolean isLadder(BlockState state, IWorldReader world, BlockPos pos, LivingEntity entity) {
+		return true;
+	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return Block.makeCuboidShape(6.0F, 0.0F, 6.0F, 10.0F, 16F, 10.0F);
+		return Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 16.0D, 10.0D);
 	}
 
 	@Override
@@ -100,21 +103,8 @@ public class BlockRope extends Block {
 		}
 	}
 
-	public boolean isOpaqueCube(BlockState state) {
-		return false;
-	}
-
-	public boolean isFullCube(BlockState state) {
-		return false;
-	}
-
 	@OnlyIn(Dist.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT;
 	}
-
-//	@Override
-//	public BlockFaceShape getBlockFaceShape(IBlockReader worldIn, BlockState state, BlockPos pos, Direction face) {
-//		return BlockFaceShape.UNDEFINED;
-//	}
 }

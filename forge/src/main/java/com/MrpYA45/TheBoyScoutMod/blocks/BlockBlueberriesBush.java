@@ -15,6 +15,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -65,6 +66,10 @@ public class BlockBlueberriesBush extends Block {
 
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(AGE);
+	}
+
+	public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+		return true;
 	}
 
 //	@Override
