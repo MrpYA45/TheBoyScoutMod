@@ -31,7 +31,7 @@ public class BlueberriesSeedsItem extends TBSMBaseItem {
 			world.setBlockState(pos, ModBlocks.BLUEBERRIES_BUSH_BLOCK.getDefaultState());
 			stack.shrink(1);
 			return ActionResultType.SUCCESS;
-		} else
-			return ActionResultType.FAIL;
+		}
+		return ActionResultType.FAIL;
 	}
 }

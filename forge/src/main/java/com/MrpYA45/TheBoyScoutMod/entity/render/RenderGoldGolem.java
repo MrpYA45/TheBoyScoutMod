@@ -1,7 +1,7 @@
 package com.MrpYA45.TheBoyScoutMod.entity.render;
 
 import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
-import com.MrpYA45.TheBoyScoutMod.entity.EntityGoldGolem;
+import com.MrpYA45.TheBoyScoutMod.entity.golems.EntityGoldGolem;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.ResourceLocation;

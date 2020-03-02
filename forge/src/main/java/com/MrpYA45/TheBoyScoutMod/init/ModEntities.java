@@ -2,9 +2,9 @@ package com.MrpYA45.TheBoyScoutMod.init;
 
 import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityFish;
-import com.MrpYA45.TheBoyScoutMod.entity.EntityGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.EntityPenguin;
 import com.MrpYA45.TheBoyScoutMod.entity.EntitySquirrel;
+import com.MrpYA45.TheBoyScoutMod.entity.golems.EntityGolem;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;

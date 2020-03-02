@@ -1,12 +1,12 @@
-package com.MrpYA45.TheBoyScoutMod.entity;
+package com.MrpYA45.TheBoyScoutMod.entity.golems;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.world.World;
 
-public class EntityGoldGolem extends EntityBaseGolem {
+public class EntityStoneGolem extends EntityBaseGolem {
 
-	public EntityGoldGolem(EntityType<? extends EntityBaseGolem> type, World worldIn) {
+	public EntityStoneGolem(EntityType<? extends EntityBaseGolem> type, World worldIn) {
 		super(type, worldIn);
 	}
 

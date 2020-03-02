@@ -4,6 +4,7 @@ import com.MrpYA45.TheBoyScoutMod.TheBoyScoutMod;
 import com.MrpYA45.TheBoyScoutMod.items.BluePowderItem;
 import com.MrpYA45.TheBoyScoutMod.items.BlueberriesSeedsItem;
 import com.MrpYA45.TheBoyScoutMod.items.DryLeafItem;
+import com.MrpYA45.TheBoyScoutMod.items.StatuetteItem;
 import com.MrpYA45.TheBoyScoutMod.items.StrawberryItem;
 import com.MrpYA45.TheBoyScoutMod.items.TBSMBaseItem;
 import com.MrpYA45.TheBoyScoutMod.items.TBSMDrinkableFoodsItem;
@@ -35,7 +36,7 @@ public class ModItems {
 	public static final Item BACKPACK = new ItemBackpack();
 	public static final Item BLUE_POWDER = new BluePowderItem("blue_powder");
 	public static final Item BLUEBERRIES_SEEDS = new BlueberriesSeedsItem("blueberries_seeds");
-	public static final Item WOOD_GOLEM_STATUETTE = new TBSMBaseItem("wood_golem_statuette");
+	public static final Item WOOD_GOLEM_STATUETTE = new StatuetteItem("wood_golem_statuette");
 	public static final Item STONE_GOLEM_STATUETTE = new TBSMBaseItem("stone_golem_statuette");
 	public static final Item IRON_GOLEM_STATUETTE = new TBSMBaseItem("iron_golem_statuette");
 	public static final Item GOLD_GOLEM_STATUETTE = new TBSMBaseItem("gold_golem_statuette");

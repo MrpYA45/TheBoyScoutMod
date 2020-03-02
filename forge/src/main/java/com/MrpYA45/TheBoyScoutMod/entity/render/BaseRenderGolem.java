@@ -1,6 +1,6 @@
 package com.MrpYA45.TheBoyScoutMod.entity.render;
 
-import com.MrpYA45.TheBoyScoutMod.entity.EntityBaseGolem;
+import com.MrpYA45.TheBoyScoutMod.entity.golems.EntityBaseGolem;
 import com.MrpYA45.TheBoyScoutMod.entity.model.ModelGolem;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;

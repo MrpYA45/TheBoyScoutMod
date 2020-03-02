@@ -1,4 +1,4 @@
-package com.MrpYA45.TheBoyScoutMod.entity;
+package com.MrpYA45.TheBoyScoutMod.entity.golems;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
