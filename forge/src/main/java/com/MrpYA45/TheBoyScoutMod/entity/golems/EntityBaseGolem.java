@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.MrpYA45.TheBoyScoutMod.entity.golems.ai.HarvestGoal;
 import com.MrpYA45.TheBoyScoutMod.entity.golems.ai.PlowGoal;
 import com.MrpYA45.TheBoyScoutMod.entity.golems.ai.RestGoal;
 
@@ -12,21 +13,20 @@ import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.items.ItemStackHandler;
 
 public abstract class EntityBaseGolem extends CreatureEntity {
 
-	private ItemStackHandler inv = new ItemStackHandler(3);
+	private Inventory inv = new Inventory(9);
 	private BlockPos rest_pos;
 	private List<BlockPos> effective_area = new ArrayList<BlockPos>();
 	@Nullable
 	private GolemJob job;
-
 	public EntityBaseGolem(EntityType<? extends EntityBaseGolem> type, World worldIn) {
 		super(type, worldIn);
 	}
@@ -38,20 +38,17 @@ public abstract class EntityBaseGolem extends CreatureEntity {
 		;
 	}
 
-//	@Override
-//	public float getEyeHeight() {
-//		return 0.9F;
-//	}
-
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new SwimGoal(this));
 		this.goalSelector.addGoal(0, new RestGoal(this));
 		this.goalSelector.addGoal(1, new PlowGoal(this));
+		this.goalSelector.addGoal(2, new HarvestGoal(this));
 		// this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 0.4D));
 		// this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 8.0F));
 	}
 
+	
 	@Override
 	public boolean canDespawn(double distanceToClosestPlayer) {
 		return false;
@@ -101,7 +98,7 @@ public abstract class EntityBaseGolem extends CreatureEntity {
 		return job;
 	}
 
-	public ItemStackHandler getInventory() {
+	public Inventory getInventory() {
 		return inv;
 	}
 

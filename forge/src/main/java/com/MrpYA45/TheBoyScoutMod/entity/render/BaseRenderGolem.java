@@ -11,6 +11,7 @@ public abstract class BaseRenderGolem<T extends EntityBaseGolem> extends MobRend
 
 	public BaseRenderGolem(EntityRendererManager manager) {
 		super(manager, new ModelGolem<T>(), 0.5F);
+		this.addLayer(new GolemHeldItemLayer<>(this));
 	}
 
 	@Override
